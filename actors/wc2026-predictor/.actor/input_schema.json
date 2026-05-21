@@ -1,0 +1,44 @@
+{
+  "title": "WC2026 Match Predictor Input",
+  "description": "Configure match prediction parameters.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "home_team": {
+      "title": "Home Team",
+      "description": "Name of the home/first team. Example: 'Brazil'",
+      "type": "string"
+    },
+    "away_team": {
+      "title": "Away Team",
+      "description": "Name of the away/second team. Example: 'Morocco'",
+      "type": "string"
+    },
+    "match_context": {
+      "title": "Match Context",
+      "description": "Tournament stage context.",
+      "type": "string",
+      "enum": ["group_stage", "round_of_32", "quarter_final", "semi_final", "final"],
+      "default": "group_stage"
+    },
+    "language": {
+      "title": "Output Language",
+      "type": "string",
+      "enum": ["en", "zh-CN", "zh-TW"],
+      "default": "en"
+    },
+    "include_reasoning": {
+      "title": "Include AI Reasoning",
+      "description": "Include the AI's detailed match analysis text.",
+      "type": "boolean",
+      "default": true
+    },
+    "anthropic_api_key": {
+      "title": "Anthropic API Key",
+      "description": "Your Anthropic API key for AI predictions. Get one free at console.anthropic.com",
+      "type": "string",
+      "isSecret": true
+    }
+  },
+  "required": ["home_team", "away_team"]
+}
