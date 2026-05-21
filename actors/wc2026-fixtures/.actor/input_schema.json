@@ -1,0 +1,34 @@
+{
+  "title": "WC2026 Fixture Scraper Input",
+  "description": "Configure what data to scrape from the 2026 FIFA World Cup.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "filter_group": {
+      "title": "Filter by Group (optional)",
+      "description": "Return only fixtures for a specific group. Leave empty for all 104 matches. Example: 'A', 'B', 'L'",
+      "type": "string",
+      "enum": ["", "A","B","C","D","E","F","G","H","I","J","K","L","Round of 32","Quarter-final","Semi-final","Final"],
+      "default": ""
+    },
+    "filter_team": {
+      "title": "Filter by Team (optional)",
+      "description": "Return only fixtures involving a specific team. Example: 'Brazil', 'England', '日本'",
+      "type": "string",
+      "default": ""
+    },
+    "include_results": {
+      "title": "Include Results",
+      "description": "Include match scores where available (live tournament data).",
+      "type": "boolean",
+      "default": true
+    },
+    "language": {
+      "title": "Output Language",
+      "description": "Team and venue names language preference.",
+      "type": "string",
+      "enum": ["en", "zh-CN", "zh-TW"],
+      "default": "en"
+    }
+  }
+}
