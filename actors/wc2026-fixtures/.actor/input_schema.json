@@ -6,28 +6,34 @@
   "properties": {
     "filter_group": {
       "title": "Filter by Group (optional)",
-      "description": "Return only fixtures for a specific group. Leave empty for all 104 matches. Example: 'A', 'B', 'L'",
+      "description": "Return only fixtures for a specific group. Leave empty for all 104 matches. Example: A, B, L",
       "type": "string",
+      "editor": "select",
       "enum": ["", "A","B","C","D","E","F","G","H","I","J","K","L","Round of 32","Quarter-final","Semi-final","Final"],
+      "enumTitles": ["All groups","Group A","Group B","Group C","Group D","Group E","Group F","Group G","Group H","Group I","Group J","Group K","Group L","Round of 32","Quarter-final","Semi-final","Final"],
       "default": ""
     },
     "filter_team": {
       "title": "Filter by Team (optional)",
-      "description": "Return only fixtures involving a specific team. Example: 'Brazil', 'England', '日本'",
+      "description": "Return only fixtures involving a specific team. Example: Brazil, England, Japan",
       "type": "string",
+      "editor": "textfield",
       "default": ""
     },
     "include_results": {
       "title": "Include Results",
-      "description": "Include match scores where available (live tournament data).",
+      "description": "Include match scores where available.",
       "type": "boolean",
+      "editor": "checkbox",
       "default": true
     },
     "language": {
       "title": "Output Language",
       "description": "Team and venue names language preference.",
       "type": "string",
+      "editor": "select",
       "enum": ["en", "zh-CN", "zh-TW"],
+      "enumTitles": ["English", "简体中文 (Simplified Chinese)", "繁體中文 (Traditional Chinese)"],
       "default": "en"
     }
   }
