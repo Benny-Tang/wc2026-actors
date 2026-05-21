@@ -1,0 +1,11 @@
+{
+  "actorSpecification": 1,
+  "name": "wc2026-predictor",
+  "title": "FIFA World Cup 2026 Match Predictor — AI + Asian Handicap | 世界杯预测",
+  "description": "AI-powered match predictions for all 104 WC2026 fixtures. Outputs win/draw/loss probabilities, Asian Handicap picks, and confidence scores. Powered by Elo ratings + recent form + Claude AI. Perfect for betting affiliates, tipster platforms and fantasy apps targeting the Chinese AP market. 人工智能世界杯比赛预测，包含亚盘推荐。",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "input": "./input_schema.json"
+}
