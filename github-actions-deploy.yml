@@ -1,0 +1,38 @@
+name: Deploy Actors to Apify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'actors/**'
+
+jobs:
+  deploy-fixtures:
+    name: Deploy wc2026-fixtures Actor
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trigger Apify build — wc2026-fixtures
+        run: |
+          curl -s -X POST \
+            "https://api.apify.com/v2/acts/${{ secrets.APIFY_ACTOR_ID_FIXTURES }}/builds" \
+            -H "Authorization: Bearer ${{ secrets.APIFY_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"tag": "latest"}' \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print('Build ID:', d.get('data',{}).get('id','check Apify console'))"
+
+  deploy-predictor:
+    name: Deploy wc2026-predictor Actor
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trigger Apify build — wc2026-predictor
+        run: |
+          curl -s -X POST \
+            "https://api.apify.com/v2/acts/${{ secrets.APIFY_ACTOR_ID_PREDICTOR }}/builds" \
+            -H "Authorization: Bearer ${{ secrets.APIFY_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"tag": "latest"}' \
+            | python3 -c "import sys,json; d=json.load(sys.stdin); print('Build ID:', d.get('data',{}).get('id','check Apify console'))"
