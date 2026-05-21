@@ -1,0 +1,30 @@
+{
+  "actorSpecification": 1,
+  "name": "wc2026-fixtures",
+  "title": "FIFA World Cup 2026 Fixture & Group Scraper | 世界杯2026赛程",
+  "description": "Scrapes all 104 FIFA World Cup 2026 fixtures, groups, venues and results. Outputs structured JSON — perfect for betting platforms, fantasy apps and sports media. Covers all 12 groups and 48 teams. Data updated daily. 抓取世界杯2026全部赛程、分组、场馆和比赛结果。",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "environmentVariables": {},
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "views": {
+        "overview": {
+          "title": "WC2026 Fixtures",
+          "transformation": {
+            "fields": [
+              "match_id", "group", "match_number",
+              "date", "kickoff_utc", "venue", "city",
+              "home_team", "away_team",
+              "home_score", "away_score", "status"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
