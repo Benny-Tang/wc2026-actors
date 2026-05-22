@@ -1,43 +1,54 @@
 {
   "title": "WC2026 Match Predictor Input",
-  "description": "Configure match prediction parameters.",
+  "description": "Configure match prediction parameters for FIFA World Cup 2026.",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
     "home_team": {
       "title": "Home Team",
-      "description": "Name of the home/first team. Example: 'Brazil'",
-      "type": "string"
+      "description": "Name of the home/first team. Example: Brazil, England, Japan",
+      "type": "string",
+      "editor": "textfield",
+      "default": "Brazil"
     },
     "away_team": {
       "title": "Away Team",
-      "description": "Name of the away/second team. Example: 'Morocco'",
-      "type": "string"
+      "description": "Name of the away/second team. Example: Morocco, Croatia, Netherlands",
+      "type": "string",
+      "editor": "textfield",
+      "default": "Morocco"
     },
     "match_context": {
       "title": "Match Context",
-      "description": "Tournament stage context.",
+      "description": "Tournament stage for this match.",
       "type": "string",
+      "editor": "select",
       "enum": ["group_stage", "round_of_32", "quarter_final", "semi_final", "final"],
+      "enumTitles": ["Group Stage", "Round of 32", "Quarter Final", "Semi Final", "Final"],
       "default": "group_stage"
     },
     "language": {
       "title": "Output Language",
+      "description": "Language for analysis text output.",
       "type": "string",
+      "editor": "select",
       "enum": ["en", "zh-CN", "zh-TW"],
+      "enumTitles": ["English", "简体中文 (Simplified Chinese)", "繁體中文 (Traditional Chinese)"],
       "default": "en"
     },
     "include_reasoning": {
       "title": "Include AI Reasoning",
-      "description": "Include the AI's detailed match analysis text.",
+      "description": "Include detailed match analysis text in output.",
       "type": "boolean",
+      "editor": "checkbox",
       "default": true
     },
     "anthropic_api_key": {
-      "title": "Anthropic API Key",
-      "description": "Your Anthropic API key for AI predictions. Get one free at console.anthropic.com",
+      "title": "Anthropic API Key (optional)",
+      "description": "Your Anthropic API key for richer AI analysis. Leave blank to use built-in statistical model. Get one free at console.anthropic.com",
       "type": "string",
-      "isSecret": true
+      "editor": "textfield",
+      "default": ""
     }
   },
   "required": ["home_team", "away_team"]
