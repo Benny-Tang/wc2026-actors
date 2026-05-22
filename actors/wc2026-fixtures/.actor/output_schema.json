@@ -1,0 +1,65 @@
+{
+  "actorSpecification": 1,
+  "fields": [
+    {
+      "name": "match_id",
+      "type": "integer",
+      "description": "Official FIFA match number"
+    },
+    {
+      "name": "group",
+      "type": "string",
+      "description": "Group stage (A-L) or knockout round"
+    },
+    {
+      "name": "date",
+      "type": "string",
+      "description": "Match date in YYYY-MM-DD format"
+    },
+    {
+      "name": "kickoff_local",
+      "type": "string",
+      "description": "Local kickoff time HH:MM"
+    },
+    {
+      "name": "timezone",
+      "type": "string",
+      "description": "Venue timezone e.g. EDT, CDT, PDT"
+    },
+    {
+      "name": "venue",
+      "type": "string",
+      "description": "Stadium name"
+    },
+    {
+      "name": "city",
+      "type": "string",
+      "description": "Host city name"
+    },
+    {
+      "name": "home_team",
+      "type": "string",
+      "description": "Home team name in selected language"
+    },
+    {
+      "name": "away_team",
+      "type": "string",
+      "description": "Away team name in selected language"
+    },
+    {
+      "name": "home_score",
+      "type": "integer",
+      "description": "Home team goals scored (null if not played yet)"
+    },
+    {
+      "name": "away_score",
+      "type": "integer",
+      "description": "Away team goals scored (null if not played yet)"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Match status: scheduled, live or finished"
+    }
+  ]
+}
