@@ -1,0 +1,95 @@
+{
+  "actorSpecification": 1,
+  "fields": [
+    {
+      "name": "home_team",
+      "type": "string",
+      "description": "Home team name"
+    },
+    {
+      "name": "away_team",
+      "type": "string",
+      "description": "Away team name"
+    },
+    {
+      "name": "match_context",
+      "type": "string",
+      "description": "Tournament stage: group_stage, round_of_32, quarter_final, semi_final, final"
+    },
+    {
+      "name": "home_win_pct",
+      "type": "number",
+      "description": "Home team win probability percentage"
+    },
+    {
+      "name": "draw_pct",
+      "type": "number",
+      "description": "Draw probability percentage"
+    },
+    {
+      "name": "away_win_pct",
+      "type": "number",
+      "description": "Away team win probability percentage"
+    },
+    {
+      "name": "predicted_winner",
+      "type": "string",
+      "description": "Predicted match outcome: home team name, away team name or Draw"
+    },
+    {
+      "name": "asian_handicap_line",
+      "type": "number",
+      "description": "Asian Handicap line e.g. -1.5, -1.0, -0.5, 0, +0.5, +1.0, +1.5"
+    },
+    {
+      "name": "asian_handicap_pick",
+      "type": "string",
+      "description": "Recommended Asian Handicap pick — team name or Draw"
+    },
+    {
+      "name": "ah_rationale",
+      "type": "string",
+      "description": "Short explanation of the Asian Handicap recommendation"
+    },
+    {
+      "name": "confidence",
+      "type": "integer",
+      "description": "Prediction confidence score 1-10 based on Elo rating gap"
+    },
+    {
+      "name": "home_elo",
+      "type": "integer",
+      "description": "Home team Elo rating"
+    },
+    {
+      "name": "away_elo",
+      "type": "integer",
+      "description": "Away team Elo rating"
+    },
+    {
+      "name": "home_form_score",
+      "type": "number",
+      "description": "Home team weighted recent form score out of 15"
+    },
+    {
+      "name": "away_form_score",
+      "type": "number",
+      "description": "Away team weighted recent form score out of 15"
+    },
+    {
+      "name": "ai_analysis",
+      "type": "string",
+      "description": "AI-generated match preview and prediction reasoning text"
+    },
+    {
+      "name": "predicted_at",
+      "type": "string",
+      "description": "UTC timestamp of when prediction was generated"
+    },
+    {
+      "name": "disclaimer",
+      "type": "string",
+      "description": "Accuracy disclaimer — predictions are probabilistic, not financial advice"
+    }
+  ]
+}
