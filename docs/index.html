@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WC2026 — Fixtures, Predictions & Asian Handicap | 世界杯2026</title>
+<meta name="description" content="Free FIFA World Cup 2026 fixtures, AI match predictions and Asian Handicap picks. No registration. 世界杯2026赛程预测亚盘推荐。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   ROOT & RESET
+═══════════════════════════════════════════ */
+:root {
+  --gold:    #FFD700;
+  --gold2:   #FFA500;
+  --red:     #CC0000;
+  --green:   #00A86B;
+  --dark:    #050810;
+  --dark2:   #0a0f1e;
+  --dark3:   #111827;
+  --card:    #0d1526;
+  --card2:   #131e35;
+  --text:    #e8eaf0;
+  --muted:   #7a8499;
+  --border:  rgba(255,215,0,0.15);
+  --glow:    rgba(255,215,0,0.4);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--dark);
+  color:var(--text);
+  font-family:'Rajdhani',sans-serif;
+  overflow-x:hidden;
+  line-height:1.6;
+}
+.zh{font-family:'Noto Sans SC',sans-serif;}
+
+/* ═══════════════════════════════════════════
+   ANIMATED BACKGROUND
+═══════════════════════════════════════════ */
+.bg-field{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(0,168,107,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(204,0,0,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(255,215,0,0.03) 0%, transparent 50%),
+    linear-gradient(180deg, #050810 0%, #080d1a 50%, #050810 100%);
+  z-index:-2;
+}
+.bg-grid{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background-image:
+    linear-gradient(rgba(255,215,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,215,0,0.03) 1px, transparent 1px);
+  background-size:60px 60px;
+  z-index:-1;
+  animation:gridMove 20s linear infinite;
+}
+@keyframes gridMove{
+  0%{background-position:0 0;}
+  100%{background-position:60px 60px;}
+}
+
+/* ═══════════════════════════════════════════
+   LANG TOGGLE
+═══════════════════════════════════════════ */
+.lang-bar{
+  position:fixed;top:0;right:0;z-index:1000;
+  display:flex;gap:0;
+}
+.lang-btn{
+  padding:8px 20px;
+  border:none;cursor:pointer;
+  font-family:'Rajdhani',sans-serif;
+  font-weight:700;font-size:13px;
+  letter-spacing:1px;
+  transition:all 0.3s;
+}
+.lang-btn.en{background:var(--gold);color:#000;}
+.lang-btn.zh{background:var(--dark3);color:var(--gold);border-left:1px solid var(--border);}
+.lang-btn.active{background:var(--gold);color:#000;}
+.lang-btn:not(.active){background:var(--dark3);color:var(--muted);}
+
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:80px 20px 40px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  width:600px;height:600px;
+  background:radial-gradient(circle, rgba(255,215,0,0.06) 0%, transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:pulse 4s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{transform:translate(-50%,-50%) scale(1);}
+  50%{transform:translate(-50%,-50%) scale(1.1);}
+}
+.hero-badge{
+  display:inline-block;
+  background:linear-gradient(135deg, rgba(255,215,0,0.15), rgba(255,165,0,0.1));
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:6px 20px;
+  border-radius:20px;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:24px;
+  animation:fadeDown 0.8s ease both;
+}
+.hero-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(60px,12vw,140px);
+  line-height:0.9;
+  letter-spacing:2px;
+  animation:fadeDown 0.8s ease 0.2s both;
+  background:linear-gradient(135deg, #fff 0%, var(--gold) 50%, var(--gold2) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-sub{
+  font-size:clamp(14px,3vw,22px);
+  color:var(--muted);
+  margin-top:16px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  animation:fadeDown 0.8s ease 0.4s both;
+}
+.hero-sub .zh-text{
+  display:none;
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:16px;
+  letter-spacing:2px;
+}
+.countdown{
+  display:flex;gap:16px;margin-top:40px;
+  animation:fadeDown 0.8s ease 0.6s both;
+  flex-wrap:wrap;justify-content:center;
+}
+.cd-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px 24px;
+  min-width:80px;
+  text-align:center;
+}
+.cd-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:48px;
+  line-height:1;
+  color:var(--gold);
+}
+.cd-label{
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+.hero-cta{
+  display:flex;gap:16px;margin-top:40px;
+  flex-wrap:wrap;justify-content:center;
+  animation:fadeDown 0.8s ease 0.8s both;
+}
+.btn-primary{
+  background:linear-gradient(135deg, var(--gold), var(--gold2));
+  color:#000;
+  border:none;
+  padding:14px 32px;
+  font-family:'Rajdhani',sans-serif;
+  font-weight:700;
+  font-size:16px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  border-radius:6px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  transition:all 0.3s;
+  box-shadow:0 0 30px rgba(255,215,0,0.3);
+}
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 50px rgba(255,215,0,0.5);
+}
+.btn-secondary{
+  background:transparent;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  padding:14px 32px;
+  font-family:'Rajdhani',sans-serif;
+  font-weight:700;
+  font-size:16px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  border-radius:6px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+  transition:all 0.3s;
+}
+.btn-secondary:hover{
+  background:rgba(255,215,0,0.1);
+  transform:translateY(-2px);
+}
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-20px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ═══════════════════════════════════════════
+   SECTIONS
+═══════════════════════════════════════════ */
+.section{padding:80px 20px;}
+.container{max-width:1200px;margin:0 auto;}
+.section-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(36px,6vw,64px);
+  letter-spacing:3px;
+  text-align:center;
+  margin-bottom:8px;
+  color:var(--gold);
+}
+.section-sub{
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:48px;
+}
+.divider{
+  width:60px;height:2px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin:16px auto 48px;
+}
+
+/* ═══════════════════════════════════════════
+   FIXTURES
+═══════════════════════════════════════════ */
+.fixtures-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(340px,1fr));
+  gap:16px;
+}
+.fixture-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:20px;
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+.fixture-card::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, var(--gold), var(--gold2));
+  opacity:0;transition:opacity 0.3s;
+}
+.fixture-card:hover{
+  border-color:rgba(255,215,0,0.4);
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+.fixture-card:hover::before{opacity:1;}
+.fixture-meta{
+  display:flex;justify-content:space-between;
+  align-items:center;margin-bottom:16px;
+}
+.fixture-group{
+  background:rgba(255,215,0,0.1);
+  border:1px solid rgba(255,215,0,0.2);
+  color:var(--gold);
+  font-size:11px;letter-spacing:2px;
+  padding:3px 10px;border-radius:20px;
+}
+.fixture-date{color:var(--muted);font-size:12px;letter-spacing:1px;}
+.fixture-teams{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;margin-bottom:16px;
+}
+.team-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;letter-spacing:1px;
+  flex:1;
+}
+.team-name.home{text-align:left;}
+.team-name.away{text-align:right;}
+.team-flag{font-size:28px;margin:0 4px;}
+.vs{
+  color:var(--muted);font-size:12px;
+  font-weight:700;letter-spacing:2px;
+}
+.fixture-info{
+  display:flex;justify-content:space-between;
+  color:var(--muted);font-size:12px;
+}
+.fixture-venue{display:flex;align-items:center;gap:4px;}
+
+/* Prediction bar */
+.pred-bar{
+  display:flex;height:6px;border-radius:3px;
+  overflow:hidden;margin:12px 0 8px;
+  background:rgba(255,255,255,0.05);
+}
+.pred-home{background:var(--green);}
+.pred-draw{background:var(--muted);}
+.pred-away{background:var(--red);}
+.pred-labels{
+  display:flex;justify-content:space-between;
+  font-size:11px;color:var(--muted);
+}
+.pred-pick{
+  text-align:center;
+  font-size:12px;
+  color:var(--gold);
+  margin-top:8px;
+  font-weight:600;
+  letter-spacing:1px;
+}
+
+/* ═══════════════════════════════════════════
+   GROUPS
+═══════════════════════════════════════════ */
+.groups-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
+  gap:16px;
+}
+.group-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:20px;
+  transition:all 0.3s;
+}
+.group-card:hover{
+  border-color:rgba(255,215,0,0.4);
+  transform:translateY(-2px);
+}
+.group-header{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:16px;
+}
+.group-letter{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px;color:var(--gold);
+  line-height:1;
+}
+.group-title{color:var(--muted);font-size:12px;letter-spacing:2px;}
+.team-row{
+  display:flex;align-items:center;gap:10px;
+  padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.team-row:last-child{border-bottom:none;}
+.team-flag-sm{font-size:20px;}
+.team-row-name{font-size:15px;font-weight:600;flex:1;}
+.team-star{font-size:11px;color:var(--muted);}
+
+/* ═══════════════════════════════════════════
+   STAR PLAYERS
+═══════════════════════════════════════════ */
+.players-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(200px,1fr));
+  gap:20px;
+}
+.player-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px 16px;
+  text-align:center;
+  transition:all 0.3s;
+  position:relative;
+  overflow:hidden;
+}
+.player-card::after{
+  content:'';
+  position:absolute;
+  bottom:-50%;left:-50%;
+  width:200%;height:200%;
+  background:radial-gradient(circle at center, rgba(255,215,0,0.03) 0%, transparent 60%);
+  transition:opacity 0.3s;
+  opacity:0;
+}
+.player-card:hover{
+  border-color:rgba(255,215,0,0.5);
+  transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.player-card:hover::after{opacity:1;}
+.player-emoji{
+  font-size:52px;
+  display:block;margin-bottom:12px;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+}
+.player-country{
+  font-size:10px;letter-spacing:3px;
+  color:var(--muted);text-transform:uppercase;
+  margin-bottom:6px;
+}
+.player-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:22px;letter-spacing:1px;
+  color:#fff;margin-bottom:4px;
+}
+.player-pos{
+  display:inline-block;
+  background:rgba(255,215,0,0.1);
+  border:1px solid rgba(255,215,0,0.2);
+  color:var(--gold);
+  font-size:10px;letter-spacing:2px;
+  padding:2px 8px;border-radius:10px;
+  margin-bottom:10px;
+}
+.player-stat{
+  font-size:13px;color:var(--muted);
+  line-height:1.5;
+}
+.player-youtube{
+  display:inline-block;
+  margin-top:12px;
+  background:rgba(255,0,0,0.15);
+  border:1px solid rgba(255,0,0,0.3);
+  color:#ff4444;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:11px;letter-spacing:1px;
+  text-decoration:none;
+  transition:all 0.3s;
+}
+.player-youtube:hover{
+  background:rgba(255,0,0,0.25);
+  color:#ff6666;
+}
+
+/* ═══════════════════════════════════════════
+   AFFILIATE SECTION
+═══════════════════════════════════════════ */
+.affiliate-section{
+  background:linear-gradient(135deg, rgba(255,215,0,0.05), rgba(255,165,0,0.03));
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:60px 20px;
+}
+.affiliate-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
+  margin-top:40px;
+}
+.affiliate-card{
+  background:var(--card2);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:24px;
+  text-align:center;
+  transition:all 0.3s;
+  text-decoration:none;
+  display:block;
+}
+.affiliate-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+.aff-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;letter-spacing:2px;
+  color:var(--gold);margin-bottom:6px;
+}
+.aff-offer{
+  font-size:13px;color:var(--text);
+  margin-bottom:12px;
+}
+.aff-bonus{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;
+  padding:8px 16px;
+  border-radius:6px;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:1px;
+  display:inline-block;
+}
+.aff-disclaimer{
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+  margin-top:20px;
+  letter-spacing:1px;
+}
+
+/* ═══════════════════════════════════════════
+   PREDICTION WIDGET
+═══════════════════════════════════════════ */
+.pred-widget{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:40px;
+  max-width:600px;
+  margin:0 auto;
+  text-align:center;
+}
+.pred-inputs{
+  display:flex;gap:16px;margin:24px 0;
+  flex-wrap:wrap;justify-content:center;
+}
+.pred-select{
+  background:var(--dark3);
+  border:1px solid var(--border);
+  color:var(--text);
+  padding:12px 16px;
+  border-radius:8px;
+  font-family:'Rajdhani',sans-serif;
+  font-size:15px;
+  flex:1;min-width:160px;
+  cursor:pointer;
+}
+.pred-btn{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;border:none;
+  padding:14px 32px;
+  border-radius:8px;
+  font-family:'Rajdhani',sans-serif;
+  font-weight:700;font-size:16px;
+  letter-spacing:2px;cursor:pointer;
+  width:100%;margin-top:8px;
+  transition:all 0.3s;
+}
+.pred-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(255,215,0,0.3);
+}
+.pred-result{
+  display:none;
+  margin-top:24px;
+  animation:fadeIn 0.5s ease;
+}
+.pred-result.show{display:block;}
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.result-teams{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:32px;letter-spacing:2px;
+  margin-bottom:16px;
+}
+.result-bars{margin:16px 0;}
+.result-bar-row{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:8px;
+}
+.result-bar-label{width:100px;text-align:right;font-size:14px;}
+.result-bar-track{
+  flex:1;height:8px;
+  background:rgba(255,255,255,0.05);
+  border-radius:4px;overflow:hidden;
+}
+.result-bar-fill{height:100%;border-radius:4px;transition:width 1s ease;}
+.result-bar-pct{width:45px;font-size:14px;color:var(--gold);}
+.result-ah{
+  background:rgba(255,215,0,0.1);
+  border:1px solid rgba(255,215,0,0.3);
+  border-radius:10px;
+  padding:12px 20px;
+  margin-top:16px;
+  font-size:15px;
+}
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer{
+  background:var(--dark2);
+  border-top:1px solid var(--border);
+  padding:40px 20px;
+  text-align:center;
+}
+.footer-links{
+  display:flex;gap:24px;justify-content:center;
+  flex-wrap:wrap;margin-bottom:16px;
+}
+.footer-links a{
+  color:var(--muted);text-decoration:none;
+  font-size:13px;letter-spacing:1px;
+  transition:color 0.3s;
+}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{color:var(--muted);font-size:12px;letter-spacing:1px;}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media(max-width:768px){
+  .fixtures-grid{grid-template-columns:1fr;}
+  .players-grid{grid-template-columns:repeat(2,1fr);}
+  .pred-widget{padding:24px 16px;}
+  .hero{padding:100px 16px 40px;}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-field"></div>
+<div class="bg-grid"></div>
+
+<!-- Language Toggle -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('zh')">中文</button>
+</div>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-badge" id="hero-badge">🏆 FIFA WORLD CUP 2026 — USA · CANADA · MEXICO</div>
+  <h1 class="hero-title">WC2026</h1>
+  <p class="hero-sub">
+    <span class="en-text">FREE FIXTURES · AI PREDICTIONS · ASIAN HANDICAP</span>
+    <span class="zh-text" style="display:none">免费赛程 · AI预测 · 亚盘推荐</span>
+  </p>
+  <div class="countdown" id="countdown">
+    <div class="cd-box"><div class="cd-num" id="cd-days">19</div><div class="cd-label en-text">Days</div><div class="cd-label zh-text" style="display:none">天</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label en-text">Hours</div><div class="cd-label zh-text" style="display:none">时</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-label en-text">Mins</div><div class="cd-label zh-text" style="display:none">分</div></div>
+    <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-label en-text">Secs</div><div class="cd-label zh-text" style="display:none">秒</div></div>
+  </div>
+  <div class="hero-cta">
+    <a href="#fixtures" class="btn-primary en-text">View Fixtures</a>
+    <a href="#fixtures" class="btn-primary zh-text" style="display:none">查看赛程</a>
+    <a href="#predict" class="btn-secondary en-text">AI Predict</a>
+    <a href="#predict" class="btn-secondary zh-text" style="display:none">AI预测</a>
+  </div>
+</section>
+
+<!-- ═══════ FIXTURES ═══════ -->
+<section class="section" id="fixtures">
+  <div class="container">
+    <h2 class="section-title en-text">FIXTURES</h2>
+    <h2 class="section-title zh-text" style="display:none">赛程表</h2>
+    <p class="section-sub en-text">All 104 matches — updated live · No registration needed</p>
+    <p class="section-sub zh-text" style="display:none">全部104场赛程 · 实时更新 · 无需注册</p>
+    <div class="divider"></div>
+    <div class="fixtures-grid" id="fixtures-grid">
+      <!-- Loaded from JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ GROUPS ═══════ -->
+<section class="section" id="groups" style="padding-top:0">
+  <div class="container">
+    <h2 class="section-title en-text">ALL 12 GROUPS</h2>
+    <h2 class="section-title zh-text" style="display:none">全部12组</h2>
+    <p class="section-sub en-text">48 teams · June 11 – July 19, 2026</p>
+    <p class="section-sub zh-text" style="display:none">48支球队 · 6月11日至7月19日</p>
+    <div class="divider"></div>
+    <div class="groups-grid" id="groups-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════ AI PREDICTOR ═══════ -->
+<section class="section" id="predict" style="background:rgba(255,215,0,0.02)">
+  <div class="container">
+    <h2 class="section-title en-text">AI MATCH PREDICTOR</h2>
+    <h2 class="section-title zh-text" style="display:none">AI比赛预测</h2>
+    <p class="section-sub en-text">Powered by Elo ratings + form analysis + Asian Handicap model</p>
+    <p class="section-sub zh-text" style="display:none">基于Elo评分+状态分析+亚盘模型</p>
+    <div class="divider"></div>
+    <div class="pred-widget">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:16px" class="en-text">Select any two WC2026 teams for instant AI prediction</p>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:16px" class="zh-text" style="display:none">选择任意两支世界杯球队获取即时AI预测</p>
+      <div class="pred-inputs">
+        <select class="pred-select" id="home-team">
+          <option value="">Home Team / 主队</option>
+        </select>
+        <select class="pred-select" id="away-team">
+          <option value="">Away Team / 客队</option>
+        </select>
+      </div>
+      <button class="pred-btn en-text" onclick="runPrediction()">⚡ GET PREDICTION</button>
+      <button class="pred-btn zh-text" onclick="runPrediction()" style="display:none">⚡ 获取预测</button>
+      <div class="pred-result" id="pred-result">
+        <div class="result-teams" id="result-teams"></div>
+        <div class="result-bars" id="result-bars"></div>
+        <div class="result-ah" id="result-ah"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ STAR PLAYERS ═══════ -->
+<section class="section" id="players">
+  <div class="container">
+    <h2 class="section-title en-text">STARS TO WATCH</h2>
+    <h2 class="section-title zh-text" style="display:none">明星球员</h2>
+    <p class="section-sub en-text">48 teams · One star per nation · Click for highlights</p>
+    <p class="section-sub zh-text" style="display:none">48支球队 · 每队一名明星球员 · 点击观看集锦</p>
+    <div class="divider"></div>
+    <div class="players-grid" id="players-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════ AFFILIATE ═══════ -->
+<section class="affiliate-section" id="betting">
+  <div class="container">
+    <h2 class="section-title en-text">BET ON WC2026</h2>
+    <h2 class="section-title zh-text" style="display:none">世界杯投注</h2>
+    <p class="section-sub en-text">Trusted betting partners · Exclusive welcome bonuses</p>
+    <p class="section-sub zh-text" style="display:none">信誉投注平台 · 独家欢迎奖金</p>
+    <div class="divider"></div>
+    <div class="affiliate-grid">
+      <a href="#" class="affiliate-card" onclick="trackAffiliate('bet365')">
+        <div class="aff-name">BET365</div>
+        <div class="aff-offer en-text">World's #1 Betting Site</div>
+        <div class="aff-offer zh-text" style="display:none">全球第一投注网站</div>
+        <div class="aff-bonus">Up to $100 Bonus</div>
+      </a>
+      <a href="#" class="affiliate-card" onclick="trackAffiliate('dafabet')">
+        <div class="aff-name">DAFABET</div>
+        <div class="aff-offer en-text">Asia's Favourite · Best AH Odds</div>
+        <div class="aff-offer zh-text" style="display:none">亚洲最佳·最优亚盘赔率</div>
+        <div class="aff-bonus">150% Welcome Bonus</div>
+      </a>
+      <a href="#" class="affiliate-card" onclick="trackAffiliate('1xbet')">
+        <div class="aff-name">1XBET</div>
+        <div class="aff-offer en-text">Best Asian Handicap Lines</div>
+        <div class="aff-offer zh-text" style="display:none">最佳亚盘线</div>
+        <div class="aff-bonus">$130 Free Bet</div>
+      </a>
+      <a href="#" class="affiliate-card" onclick="trackAffiliate('williamhill')">
+        <div class="aff-name">W. HILL</div>
+        <div class="aff-offer en-text">Premium Odds · Live Betting</div>
+        <div class="aff-offer zh-text" style="display:none">优质赔率·现场投注</div>
+        <div class="aff-bonus">Bet $10 Get $30</div>
+      </a>
+    </div>
+    <p class="aff-disclaimer en-text">⚠️ 18+ only. Please gamble responsibly. T&Cs apply. Affiliate links — we may earn commission.</p>
+    <p class="aff-disclaimer zh-text" style="display:none">⚠️ 仅限18岁以上。请负责任地投注。条款适用。联盟链接——我们可能赚取佣金。</p>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="footer-links">
+    <a href="#fixtures">Fixtures</a>
+    <a href="#groups">Groups</a>
+    <a href="#predict">Predict</a>
+    <a href="#players">Players</a>
+    <a href="#betting">Betting</a>
+    <a href="https://apify.com/kindly_bolt/wc2026-actors" target="_blank">API</a>
+  </div>
+  <p class="footer-copy">© 2026 WC2026Tips · Powered by <a href="https://apify.com/kindly_bolt/wc2026-actors" style="color:var(--gold);text-decoration:none">Apify Actors</a> · Built by Benny Tang</p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   DATA
+═══════════════════════════════════════════ */
+const GROUPS = {
+  A:{teams:[{name:'Mexico',flag:'🇲🇽',star:'R. Jiménez'},{name:'South Korea',flag:'🇰🇷',star:'Son Heung-min'},{name:'South Africa',flag:'🇿🇦',star:'P. Tau'},{name:'Czechia',flag:'🇨🇿',star:'T. Souček'}]},
+  B:{teams:[{name:'Canada',flag:'🇨🇦',star:'A. Davies'},{name:'Switzerland',flag:'🇨🇭',star:'G. Xhaka'},{name:'Qatar',flag:'🇶🇦',star:'A. Afif'},{name:'Bosnia',flag:'🇧🇦',star:'E. Džeko'}]},
+  C:{teams:[{name:'Brazil',flag:'🇧🇷',star:'Vinícius Jr.'},{name:'Morocco',flag:'🇲🇦',star:'A. Hakimi'},{name:'Haiti',flag:'🇭🇹',star:'K. Lamothe'},{name:'Scotland',flag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',star:'A. Robertson'}]},
+  D:{teams:[{name:'USA',flag:'🇺🇸',star:'C. Pulisic'},{name:'Paraguay',flag:'🇵🇾',star:'M. Almiron'},{name:'Australia',flag:'🇦🇺',star:'M. Leckie'},{name:'Türkiye',flag:'🇹🇷',star:'H. Çalhanoğlu'}]},
+  E:{teams:[{name:'Germany',flag:'🇩🇪',star:'J. Musiala'},{name:'Curaçao',flag:'🇨🇼',star:'L. Fergurson'},{name:'Ivory Coast',flag:'🇨🇮',star:'S. Koné'},{name:'Ecuador',flag:'🇪🇨',star:'M. Caicedo'}]},
+  F:{teams:[{name:'Netherlands',flag:'🇳🇱',star:'V. van Dijk'},{name:'Japan',flag:'🇯🇵',star:'B. Mitoma'},{name:'Sweden',flag:'🇸🇪',star:'V. Gyökeres'},{name:'Tunisia',flag:'🇹🇳',star:'H. Msakni'}]},
+  G:{teams:[{name:'Belgium',flag:'🇧🇪',star:'K. De Bruyne'},{name:'Egypt',flag:'🇪🇬',star:'M. Salah'},{name:'Iran',flag:'🇮🇷',star:'M. Taremi'},{name:'New Zealand',flag:'🇳🇿',star:'C. Wood'}]},
+  H:{teams:[{name:'Spain',flag:'🇪🇸',star:'L. Yamal'},{name:'Cape Verde',flag:'🇨🇻',star:'G. Ramos'},{name:'Saudi Arabia',flag:'🇸🇦',star:'S. Al-Dawsari'},{name:'Uruguay',flag:'🇺🇾',star:'F. Valverde'}]},
+  I:{teams:[{name:'France',flag:'🇫🇷',star:'K. Mbappé'},{name:'Senegal',flag:'🇸🇳',star:'S. Mané'},{name:'Iraq',flag:'🇮🇶',star:'A. Al-Haydos'},{name:'Norway',flag:'🇳🇴',star:'E. Haaland'}]},
+  J:{teams:[{name:'Argentina',flag:'🇦🇷',star:'L. Messi'},{name:'Algeria',flag:'🇩🇿',star:'R. Mahrez'},{name:'Austria',flag:'🇦🇹',star:'M. Sabitzer'},{name:'Jordan',flag:'🇯🇴',star:'Y. Al-Naimat'}]},
+  K:{teams:[{name:'Portugal',flag:'🇵🇹',star:'C. Ronaldo'},{name:'DR Congo',flag:'🇨🇩',star:'C. Lema'},{name:'Uzbekistan',flag:'🇺🇿',star:'E. Shomurodov'},{name:'Colombia',flag:'🇨🇴',star:'L. Díaz'}]},
+  L:{teams:[{name:'England',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',star:'J. Bellingham'},{name:'Croatia',flag:'🇭🇷',star:'L. Modrić'},{name:'Ghana',flag:'🇬🇭',star:'M. Kudus'},{name:'Panama',flag:'🇵🇦',star:'A. Córdoba'}]}
+};
+
+const FIXTURES=[
+  {id:1,group:'A',date:'2026-06-11',time:'13:00',tz:'CDT',home:'Mexico',hflag:'🇲🇽',away:'South Africa',aflag:'🇿🇦',venue:'Estadio Azteca',city:'Mexico City',hw:52,dr:24,aw:24,ah:'Mexico -0.5'},
+  {id:2,group:'A',date:'2026-06-11',time:'22:00',tz:'CDT',home:'South Korea',hflag:'🇰🇷',away:'Czechia',aflag:'🇨🇿',venue:'Estadio Akron',city:'Guadalajara',hw:38,dr:28,aw:34,ah:'Draw Ball'},
+  {id:3,group:'B',date:'2026-06-12',time:'15:00',tz:'EDT',home:'Canada',hflag:'🇨🇦',away:'Bosnia',aflag:'🇧🇦',venue:'BMO Field',city:'Toronto',hw:44,dr:26,aw:30,ah:'Canada -0.5'},
+  {id:4,group:'B',date:'2026-06-12',time:'15:00',tz:'PDT',home:'Qatar',hflag:'🇶🇦',away:'Switzerland',aflag:'🇨🇭',venue:'Levi\'s Stadium',city:'San Francisco',hw:22,dr:24,aw:54,ah:'Switzerland -1.0'},
+  {id:5,group:'C',date:'2026-06-13',time:'18:00',tz:'EDT',home:'Brazil',hflag:'🇧🇷',away:'Morocco',aflag:'🇲🇦',venue:'MetLife Stadium',city:'New York',hw:46,dr:22,aw:32,ah:'Brazil -0.5'},
+  {id:6,group:'C',date:'2026-06-13',time:'21:00',tz:'EDT',home:'Haiti',hflag:'🇭🇹',away:'Scotland',aflag:'🏴󠁧󠁢󠁳󠁣󠁴󠁿',venue:'Gillette Stadium',city:'Boston',hw:28,dr:28,aw:44,ah:'Scotland +0.5'},
+  {id:7,group:'D',date:'2026-06-12',time:'21:00',tz:'PDT',home:'USA',hflag:'🇺🇸',away:'Paraguay',aflag:'🇵🇾',venue:'SoFi Stadium',city:'Los Angeles',hw:54,dr:22,aw:24,ah:'USA -1.0'},
+  {id:8,group:'D',date:'2026-06-12',time:'00:00',tz:'PDT',home:'Australia',hflag:'🇦🇺',away:'Türkiye',aflag:'🇹🇷',venue:'BC Place',city:'Vancouver',hw:34,dr:28,aw:38,ah:'Türkiye +0.5'},
+  {id:9,group:'E',date:'2026-06-14',time:'12:00',tz:'CDT',home:'Germany',hflag:'🇩🇪',away:'Curaçao',aflag:'🇨🇼',venue:'NRG Stadium',city:'Houston',hw:78,dr:14,aw:8,ah:'Germany -2.0'},
+  {id:10,group:'F',date:'2026-06-15',time:'15:00',tz:'EDT',home:'Netherlands',hflag:'🇳🇱',away:'Japan',aflag:'🇯🇵',venue:'Lincoln Financial',city:'Philadelphia',hw:50,dr:24,aw:26,ah:'Netherlands -1.0'},
+  {id:11,group:'G',date:'2026-06-14',time:'15:00',tz:'PDT',home:'Belgium',hflag:'🇧🇪',away:'Egypt',aflag:'🇪🇬',venue:'Lumen Field',city:'Seattle',hw:44,dr:26,aw:30,ah:'Belgium -0.5'},
+  {id:12,group:'H',date:'2026-06-14',time:'12:00',tz:'EDT',home:'Spain',hflag:'🇪🇸',away:'Cape Verde',aflag:'🇨🇻',venue:'Mercedes-Benz',city:'Atlanta',hw:72,dr:16,aw:12,ah:'Spain -1.5'},
+  {id:13,group:'I',date:'2026-06-15',time:'15:00',tz:'EDT',home:'France',hflag:'🇫🇷',away:'Senegal',aflag:'🇸🇳',venue:'MetLife Stadium',city:'New York',hw:56,dr:22,aw:22,ah:'France -1.0'},
+  {id:14,group:'J',date:'2026-06-15',time:'21:00',tz:'CDT',home:'Argentina',hflag:'🇦🇷',away:'Algeria',aflag:'🇩🇿',venue:'Arrowhead Stadium',city:'Kansas City',hw:64,dr:20,aw:16,ah:'Argentina -1.5'},
+  {id:15,group:'K',date:'2026-06-16',time:'13:00',tz:'CDT',home:'Portugal',hflag:'🇵🇹',away:'DR Congo',aflag:'🇨🇩',venue:'NRG Stadium',city:'Houston',hw:68,dr:18,aw:14,ah:'Portugal -1.5'},
+  {id:16,group:'L',date:'2026-06-17',time:'15:00',tz:'CDT',home:'England',hflag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',away:'Croatia',aflag:'🇭🇷',venue:'AT&T Stadium',city:'Dallas',hw:50,dr:26,aw:24,ah:'England -0.5'},
+];
+
+const PLAYERS=[
+  {flag:'🇦🇷',country:'Argentina',name:'L. Messi',pos:'Forward',stat:'WC Champion 2022\n44 goals intl 2024-25',yt:'https://www.youtube.com/results?search_query=Messi+2026+World+Cup'},
+  {flag:'🇵🇹',country:'Portugal',name:'C. Ronaldo',pos:'Forward',stat:'Final WC at 41\nAll-time top scorer',yt:'https://www.youtube.com/results?search_query=Ronaldo+2026+World+Cup'},
+  {flag:'🇫🇷',country:'France',name:'K. Mbappé',pos:'Forward',stat:'55 goals for France\nReal Madrid captain',yt:'https://www.youtube.com/results?search_query=Mbappe+2026+World+Cup'},
+  {flag:'🇧🇷',country:'Brazil',name:'Vinícius Jr.',pos:'Winger',stat:'Ballon d\'Or 2024\nReal Madrid star',yt:'https://www.youtube.com/results?search_query=Vinicius+Jr+2026+World+Cup'},
+  {flag:'🇳🇴',country:'Norway',name:'E. Haaland',pos:'Striker',stat:'55 goals in 48 caps\nMan City legend',yt:'https://www.youtube.com/results?search_query=Haaland+2026+World+Cup'},
+  {flag:'🇪🇸',country:'Spain',name:'L. Yamal',pos:'Winger',stat:'18 years old\nEuros winner 2024',yt:'https://www.youtube.com/results?search_query=Lamine+Yamal+2026+World+Cup'},
+  {flag:'🇩🇪',country:'Germany',name:'J. Musiala',pos:'Midfielder',stat:'Bayern Munich\n22 yr old phenom',yt:'https://www.youtube.com/results?search_query=Musiala+2026+World+Cup'},
+  {flag:'🇪🇬',country:'Egypt',name:'M. Salah',pos:'Forward',stat:'Liverpool legend\nAfrica\'s greatest',yt:'https://www.youtube.com/results?search_query=Salah+2026+World+Cup'},
+  {flag:'🇧🇪',country:'Belgium',name:'K. De Bruyne',pos:'Midfielder',stat:'Man City maestro\nLast WC chance',yt:'https://www.youtube.com/results?search_query=De+Bruyne+2026+World+Cup'},
+  {flag:'🇰🇷',country:'South Korea',name:'Son Heung-min',pos:'Forward',stat:'54 goals for Korea\nLAFC superstar',yt:'https://www.youtube.com/results?search_query=Son+Heung+min+2026+World+Cup'},
+  {flag:'🇺🇾',country:'Uruguay',name:'F. Valverde',pos:'Midfielder',stat:'Real Madrid engine\nUruguay captain',yt:'https://www.youtube.com/results?search_query=Valverde+2026+World+Cup'},
+  {flag:'🇭🇷',country:'Croatia',name:'L. Modrić',pos:'Midfielder',stat:'41 years old\nLast WC ever',yt:'https://www.youtube.com/results?search_query=Modric+2026+World+Cup'},
+  {flag:'🇳🇱',country:'Netherlands',name:'V. van Dijk',pos:'Defender',stat:'Liverpool captain\nWorld\'s best CB',yt:'https://www.youtube.com/results?search_query=Van+Dijk+2026+World+Cup'},
+  {flag:'🇺🇸',country:'USA',name:'C. Pulisic',pos:'Forward',stat:'32 goals for USA\nAC Milan star',yt:'https://www.youtube.com/results?search_query=Pulisic+2026+World+Cup'},
+  {flag:'🇲🇦',country:'Morocco',name:'A. Hakimi',pos:'Defender',stat:'PSG fullback\nAfrica\'s best RB',yt:'https://www.youtube.com/results?search_query=Hakimi+2026+World+Cup'},
+  {flag:'🇯🇵',country:'Japan',name:'B. Mitoma',pos:'Winger',stat:'Brighton winger\nJapan\'s speedster',yt:'https://www.youtube.com/results?search_query=Mitoma+2026+World+Cup'},
+  {flag:'🇨🇴',country:'Colombia',name:'L. Díaz',pos:'Winger',stat:'Liverpool winger\nSouth America star',yt:'https://www.youtube.com/results?search_query=Luis+Diaz+2026+World+Cup'},
+  {flag:'🇸🇳',country:'Senegal',name:'S. Mané',pos:'Forward',stat:'Africa Cup winner\nAl-Nassr star',yt:'https://www.youtube.com/results?search_query=Mane+2026+World+Cup'},
+  {flag:'🇩🇿',country:'Algeria',name:'R. Mahrez',pos:'Winger',stat:'Al-Ahli captain\nFormer Man City',yt:'https://www.youtube.com/results?search_query=Mahrez+2026+World+Cup'},
+  {flag:'🇪🇨',country:'Ecuador',name:'M. Caicedo',stat:'Chelsea engine\nSouth Am star',pos:'Midfielder',yt:'https://www.youtube.com/results?search_query=Caicedo+2026+World+Cup'},
+  {flag:'🇨🇦',country:'Canada',name:'A. Davies',pos:'Defender',stat:'Bayern Munich\nFastest LB alive',yt:'https://www.youtube.com/results?search_query=Alphonso+Davies+2026+World+Cup'},
+  {flag:'🇲🇽',country:'Mexico',name:'R. Jiménez',pos:'Striker',stat:'121 caps 34 goals\nHost nation hero',yt:'https://www.youtube.com/results?search_query=Raul+Jimenez+2026+World+Cup'},
+  {flag:'🇬🇧',country:'England',name:'J. Bellingham',pos:'Midfielder',stat:'Real Madrid gem\nEngland\'s hope',yt:'https://www.youtube.com/results?search_query=Bellingham+2026+World+Cup'},
+  {flag:'🇸🇪',country:'Sweden',name:'V. Gyökeres',pos:'Striker',stat:'Arsenal striker\n54 goals 2024-25',yt:'https://www.youtube.com/results?search_query=Gyokeres+2026+World+Cup'},
+];
+
+const ELO={
+  'Argentina':2063,'France':2050,'England':2020,'Brazil':2010,'Spain':2008,
+  'Portugal':1990,'Belgium':1985,'Netherlands':1975,'Germany':1965,'Uruguay':1940,
+  'Colombia':1930,'Croatia':1920,'Morocco':1910,'Switzerland':1905,'Japan':1900,
+  'Mexico':1890,'USA':1880,'South Korea':1870,'Senegal':1860,'Austria':1850,
+  'Ecuador':1845,'Sweden':1835,'Australia':1820,'Iran':1815,'Türkiye':1810,
+  'Norway':1800,'Scotland':1795,'Ivory Coast':1790,'Tunisia':1780,'Algeria':1775,
+  'Egypt':1770,'South Africa':1760,'Canada':1755,'Saudi Arabia':1750,'Paraguay':1745,
+  'Ghana':1740,'Bosnia':1735,'Qatar':1720,'DR Congo':1710,'Jordan':1700,
+  'Uzbekistan':1695,'Panama':1690,'Cape Verde':1685,'Iraq':1680,'Haiti':1660,
+  'Czechia':1850,'New Zealand':1620,'Curaçao':1600,'Cameroon':1750
+};
+
+/* ═══════════════════════════════════════════
+   RENDER FIXTURES
+═══════════════════════════════════════════ */
+function renderFixtures(){
+  const grid=document.getElementById('fixtures-grid');
+  grid.innerHTML=FIXTURES.map(f=>`
+    <div class="fixture-card">
+      <div class="fixture-meta">
+        <span class="fixture-group">Group ${f.group}</span>
+        <span class="fixture-date">${f.date} · ${f.time} ${f.tz}</span>
+      </div>
+      <div class="fixture-teams">
+        <div class="team-name home">${f.home}</div>
+        <span class="team-flag">${f.hflag}</span>
+        <span class="vs">VS</span>
+        <span class="team-flag">${f.aflag}</span>
+        <div class="team-name away">${f.away}</div>
+      </div>
+      <div class="pred-bar">
+        <div class="pred-home" style="width:${f.hw}%"></div>
+        <div class="pred-draw" style="width:${f.dr}%"></div>
+        <div class="pred-away" style="width:${f.aw}%"></div>
+      </div>
+      <div class="pred-labels">
+        <span style="color:#00A86B">${f.hw}%</span>
+        <span>Draw ${f.dr}%</span>
+        <span style="color:#CC0000">${f.aw}%</span>
+      </div>
+      <div class="pred-pick">🎯 AH: ${f.ah}</div>
+      <div class="fixture-info">
+        <span class="fixture-venue">📍 ${f.venue}, ${f.city}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════
+   RENDER GROUPS
+═══════════════════════════════════════════ */
+function renderGroups(){
+  const grid=document.getElementById('groups-grid');
+  grid.innerHTML=Object.entries(GROUPS).map(([letter,g])=>`
+    <div class="group-card">
+      <div class="group-header">
+        <div class="group-letter">${letter}</div>
+        <div class="group-title">GROUP ${letter}</div>
+      </div>
+      ${g.teams.map(t=>`
+        <div class="team-row">
+          <span class="team-flag-sm">${t.flag}</span>
+          <span class="team-row-name">${t.name}</span>
+          <span class="team-star">⭐ ${t.star}</span>
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════
+   RENDER PLAYERS
+═══════════════════════════════════════════ */
+function renderPlayers(){
+  const grid=document.getElementById('players-grid');
+  grid.innerHTML=PLAYERS.map(p=>`
+    <div class="player-card">
+      <span class="player-emoji">${p.flag}</span>
+      <div class="player-country en-text">${p.country}</div>
+      <div class="player-name">${p.name}</div>
+      <div class="player-pos">${p.pos}</div>
+      <div class="player-stat">${p.stat.replace('\n','<br>')}</div>
+      <a href="${p.yt}" target="_blank" class="player-youtube">
+        ▶ Watch Highlights
+      </a>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════
+   POPULATE TEAM SELECTS
+═══════════════════════════════════════════ */
+function populateSelects(){
+  const teams=Object.keys(ELO).sort();
+  const homeEl=document.getElementById('home-team');
+  const awayEl=document.getElementById('away-team');
+  teams.forEach(t=>{
+    homeEl.innerHTML+=`<option value="${t}">${t}</option>`;
+    awayEl.innerHTML+=`<option value="${t}">${t}</option>`;
+  });
+}
+
+/* ═══════════════════════════════════════════
+   PREDICTION ENGINE
+═══════════════════════════════════════════ */
+function eloProb(a,b){return 1/(1+Math.pow(10,(b-a)/400));}
+
+function runPrediction(){
+  const home=document.getElementById('home-team').value;
+  const away=document.getElementById('away-team').value;
+  if(!home||!away||home===away){
+    alert('Please select two different teams!');return;
+  }
+  const eloH=ELO[home]||1700;
+  const eloA=ELO[away]||1700;
+  const baseWin=eloProb(eloH,eloA);
+  const gap=Math.abs(eloH-eloA);
+  const draw=Math.max(0.18,0.32-(gap/2000));
+  const rem=1-draw;
+  const wH=baseWin*rem;
+  const wA=(1-baseWin)*rem;
+  const total=wH+draw+wA;
+  const hwP=Math.round((wH/total)*100);
+  const drP=Math.round((draw/total)*100);
+  const awP=100-hwP-drP;
+
+  // AH
+  const diff=hwP-awP;
+  let ah,pick;
+  if(diff>30){ah=-1.5;pick=home;}
+  else if(diff>18){ah=-1.0;pick=home;}
+  else if(diff>8){ah=-0.5;pick=home;}
+  else if(diff>-8){ah=0;pick='Draw Ball';}
+  else if(diff>-18){ah=+0.5;pick=away;}
+  else if(diff>-30){ah=+1.0;pick=away;}
+  else{ah=+1.5;pick=away;}
+
+  const conf=Math.min(10,Math.max(1,Math.round(gap/50)));
+
+  // Display
+  document.getElementById('result-teams').textContent=`${home} vs ${away}`;
+  document.getElementById('result-bars').innerHTML=`
+    <div class="result-bar-row">
+      <div class="result-bar-label">${home}</div>
+      <div class="result-bar-track"><div class="result-bar-fill" style="width:${hwP}%;background:#00A86B"></div></div>
+      <div class="result-bar-pct">${hwP}%</div>
+    </div>
+    <div class="result-bar-row">
+      <div class="result-bar-label">Draw</div>
+      <div class="result-bar-track"><div class="result-bar-fill" style="width:${drP}%;background:#7a8499"></div></div>
+      <div class="result-bar-pct">${drP}%</div>
+    </div>
+    <div class="result-bar-row">
+      <div class="result-bar-label">${away}</div>
+      <div class="result-bar-track"><div class="result-bar-fill" style="width:${awP}%;background:#CC0000"></div></div>
+      <div class="result-bar-pct">${awP}%</div>
+    </div>
+  `;
+  document.getElementById('result-ah').innerHTML=
+    `🎯 Asian Handicap Pick: <strong style="color:var(--gold)">${pick} (${ah>=0?'+':''}${ah})</strong> &nbsp;|&nbsp; Confidence: <strong style="color:var(--gold)">${conf}/10</strong>`;
+
+  const res=document.getElementById('pred-result');
+  res.classList.remove('show');
+  setTimeout(()=>res.classList.add('show'),10);
+}
+
+/* ═══════════════════════════════════════════
+   COUNTDOWN
+═══════════════════════════════════════════ */
+function updateCountdown(){
+  const target=new Date('2026-06-11T20:00:00Z');
+  const now=new Date();
+  const diff=target-now;
+  if(diff<=0){
+    document.getElementById('countdown').innerHTML=
+      '<div style="font-family:Bebas Neue;font-size:48px;color:var(--gold);letter-spacing:4px">🏆 IT\'S KICKOFF!</div>';
+    return;
+  }
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor((diff%86400000)/3600000);
+  const m=Math.floor((diff%3600000)/60000);
+  const s=Math.floor((diff%60000)/1000);
+  document.getElementById('cd-days').textContent=String(d).padStart(2,'0');
+  document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+/* ═══════════════════════════════════════════
+   LANGUAGE TOGGLE
+═══════════════════════════════════════════ */
+function setLang(lang){
+  document.querySelectorAll('.en-text').forEach(el=>{
+    el.style.display=lang==='en'?'':'none';
+  });
+  document.querySelectorAll('.zh-text').forEach(el=>{
+    el.style.display=lang==='zh'?'':'none';
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active',btn.classList.contains(lang));
+  });
+}
+
+/* ═══════════════════════════════════════════
+   AFFILIATE TRACKING
+═══════════════════════════════════════════ */
+function trackAffiliate(name){
+  console.log('Affiliate click:',name);
+  // Add your real affiliate URLs here
+}
+
+/* ═══════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════ */
+renderFixtures();
+renderGroups();
+renderPlayers();
+populateSelects();
+</script>
+</body>
+</html>
