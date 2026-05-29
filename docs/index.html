@@ -32,18 +32,18 @@
 html{scroll-behavior:smooth;}
 body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6;}
 
+/* ── BANNER SLIDER ── */
+.banner-slider{width:100%;background:#000;overflow:hidden;position:relative;height:110px;cursor:pointer;}
+.banner-track{display:flex;animation:bannerScroll 28s linear infinite;height:100%;}
+.banner-track:hover{animation-play-state:paused;}
+.banner-slide{flex-shrink:0;height:100%;position:relative;}
+.banner-slide img{height:100%;width:auto;object-fit:cover;}
+.banner-cta{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:var(--gold);color:#000;padding:7px 14px;border-radius:4px;font-size:11px;font-weight:800;letter-spacing:1px;white-space:nowrap;pointer-events:none;}
+@keyframes bannerScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 /* ── TICKER ── */
-.ticker{
-  background:var(--gold);color:#000;
-  padding:8px 0;overflow:hidden;
-  font-size:13px;font-weight:700;letter-spacing:0.5px;
-}
-.ticker-inner{
-  display:flex;gap:0;
-  animation:ticker 40s linear infinite;
-  white-space:nowrap;
-}
-.ticker-item{padding:0 40px;}
+.ticker{background:var(--gold);color:#000;padding:6px 0;overflow:hidden;font-size:12px;font-weight:700;letter-spacing:0.5px;}
+.ticker-inner{display:flex;gap:0;animation:ticker 40s linear infinite;white-space:nowrap;}
+.ticker-item{padding:0 32px;}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ── NAV ── */
@@ -503,7 +503,22 @@ footer{
 </head>
 <body>
 
-<!-- TICKER -->
+<!-- BANNER SLIDER -->
+<a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" style="display:block;text-decoration:none;">
+  <div class="banner-slider">
+    <div class="banner-track">
+      <div class="banner-slide"><img src="banners/bk8_banner_europe_vs_southamerica.jpg" alt="BK8 WC2026"><div class="banner-cta">JOIN BK8 FREE</div></div>
+      <div class="banner-slide"><img src="banners/bk8_banner_portugal_ronaldo.jpg" alt="BK8 Ronaldo"><div class="banner-cta">JOIN BK8 FREE</div></div>
+      <div class="banner-slide"><img src="banners/bk8_banner_highscoring.jpg" alt="BK8 WC2026"><div class="banner-cta">JOIN BK8 FREE</div></div>
+      <div class="banner-slide"><img src="banners/bk8_banner_france_vs_spain.jpg" alt="BK8 France vs Spain"><div class="banner-cta">JOIN BK8 FREE</div></div>
+      <div class="banner-slide"><img src="banners/bk8_banner_europe_vs_southamerica.jpg" alt="BK8 WC2026"><div class="banner-cta">JOIN BK8 FREE</div></div>
+      <div class="banner-slide"><img src="banners/bk8_banner_portugal_ronaldo.jpg" alt="BK8 Ronaldo"><div class="banner-cta">JOIN BK8 FREE</div></div>
+      <div class="banner-slide"><img src="banners/bk8_banner_highscoring.jpg" alt="BK8 WC2026"><div class="banner-cta">JOIN BK8 FREE</div></div>
+      <div class="banner-slide"><img src="banners/bk8_banner_france_vs_spain.jpg" alt="BK8 France vs Spain"><div class="banner-cta">JOIN BK8 FREE</div></div>
+    </div>
+  </div>
+</a>
+<!-- TEXT TICKER -->
 <div class="ticker" aria-label="Live news ticker">
   <div class="ticker-inner" id="ticker-inner"></div>
 </div>
