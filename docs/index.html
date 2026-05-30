@@ -500,89 +500,83 @@ footer{
   .ft-bot{flex-direction:column;text-align:center;}
 }
 
-/* ── BK8 BANNER CAROUSEL (Option D) ── */
-.bk8-carousel{
-  padding:0;
-  background:#000;
-  position:relative;
-  overflow:hidden;
-}
-.carousel-label{
-  position:absolute;top:12px;left:16px;z-index:10;
-  background:rgba(0,0,0,0.6);
-  color:var(--gold);
-  font-size:10px;font-weight:700;letter-spacing:2px;
-  padding:4px 10px;border-radius:3px;
-  text-transform:uppercase;
-}
-.carousel-track{
-  display:flex;
-  transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
-  will-change:transform;
-}
-.carousel-slide{
-  flex-shrink:0;
-  width:100%;
-  position:relative;
-  cursor:pointer;
-}
-.carousel-slide img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  object-position:center top;
-  display:block;
-}
-.carousel-overlay{
-  position:absolute;
-  bottom:0;left:0;right:0;
-  background:linear-gradient(transparent, rgba(0,0,0,0.75));
-  padding:24px 32px;
-  display:flex;align-items:center;justify-content:space-between;
-}
-.carousel-text{font-size:15px;color:rgba(255,255,255,0.9);font-weight:500;}
-.carousel-join{
-  background:var(--gold);color:#000;
-  padding:12px 28px;border-radius:6px;
-  font-weight:800;font-size:15px;letter-spacing:1px;
-  text-decoration:none;white-space:nowrap;
-  transition:all 0.2s;
-}
-.carousel-join:hover{background:var(--gold2);transform:scale(1.03);}
-/* Dots */
-.carousel-dots{
-  position:absolute;bottom:16px;left:50%;
-  transform:translateX(-50%);
-  display:flex;gap:8px;z-index:10;
-}
-.c-dot{
-  width:8px;height:8px;border-radius:50%;
-  background:rgba(255,255,255,0.35);
-  cursor:pointer;transition:all 0.3s;border:none;
-}
-.c-dot.active{background:var(--gold);width:24px;border-radius:4px;}
-/* Arrows */
-.carousel-btn{
-  position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.2);
-  color:#fff;width:44px;height:44px;border-radius:50%;
-  font-size:18px;cursor:pointer;z-index:10;
-  display:flex;align-items:center;justify-content:center;
-  transition:all 0.2s;
-}
-.carousel-btn:hover{background:rgba(255,215,0,0.3);border-color:var(--gold);}
-.carousel-btn.prev{left:16px;}
-.carousel-btn.next{right:16px;}
-/* Sponsored label */
-.sponsored-bar{
-  background:var(--navy3);
+
+
+/* ── BK8 BANNER GRID ── */
+.bk8-banner-section{
+  background:var(--navy2);
   border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
-  padding:8px 24px;
+  padding:20px 40px;
+}
+.bk8-banner-label{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
+.bk8-label-left{
+  display:flex;align-items:center;gap:10px;
+}
+.bk8-sp{
+  font-size:10px;color:var(--gray);
+  letter-spacing:2px;text-transform:uppercase;
+}
+.bk8-name{
+  font-size:14px;font-weight:800;color:var(--gold);
+}
+.bk8-offer{
+  font-size:12px;color:rgba(255,255,255,0.6);
+}
+.bk8-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.bk8-card{
+  position:relative;border-radius:8px;
+  overflow:hidden;cursor:pointer;
+  border:1px solid var(--border);
+  transition:all 0.25s;
+  text-decoration:none;display:block;
+  background:#000;
+}
+.bk8-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,0.5);
+}
+.bk8-card img{
+  width:100%;height:200px;
+  object-fit:cover;object-position:center top;
+  display:block;
+  transition:transform 0.3s;
+}
+.bk8-card:hover img{transform:scale(1.03);}
+.bk8-card-foot{
+  padding:10px 12px;
+  background:linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,165,0,0.05));
+  border-top:1px solid rgba(255,215,0,0.15);
   display:flex;align-items:center;justify-content:space-between;
 }
-.sp-label{font-size:10px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;}
-.sp-brand{font-size:13px;font-weight:700;color:var(--gold);}
+.bk8-card-title{
+  font-size:11px;font-weight:600;
+  color:rgba(255,255,255,0.8);
+  line-height:1.3;flex:1;
+}
+.bk8-card-btn{
+  background:var(--gold);color:#000;
+  font-size:10px;font-weight:800;
+  padding:5px 10px;border-radius:3px;
+  white-space:nowrap;letter-spacing:0.5px;
+  margin-left:8px;flex-shrink:0;
+}
+@media(max-width:768px){
+  .bk8-grid{grid-template-columns:repeat(2,1fr);}
+  .bk8-banner-section{padding:16px 20px;}
+}
+@media(max-width:480px){
+  .bk8-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
@@ -842,60 +836,55 @@ footer{
 </section>
 
 
-<!-- BK8 BANNER CAROUSEL — Option D -->
-<div style="position:relative;">
-  <div class="sponsored-bar">
-    <span class="sp-label en-text">Sponsored Partner</span>
-    <span class="sp-label zh-text" style="display:none">赞助合作伙伴</span>
-    <span class="sp-brand">BK8 — Biggest & Most Trusted</span>
-    <span class="sp-label en-text">You Play, We Pay up to 200!</span>
-    <span class="sp-label zh-text" style="display:none">您玩，我们最高赔付200！</span>
-  </div>
-  <div class="bk8-carousel" id="bk8-carousel">
-    <div class="carousel-label">🏆 WC2026 OFFICIAL PARTNER</div>
-    <div class="carousel-track" id="carousel-track">
-      <a class="carousel-slide" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
-        <img src="banners/bk8_banner_europe_vs_southamerica.jpg" alt="BK8 — Which Continent Wins WC2026?">
-        <div class="carousel-overlay">
-          <span class="carousel-text en-text">🌍 Europe vs South America — Which continent dominates WC2026?</span>
-          <span class="carousel-text zh-text" style="display:none">🌍 欧洲 vs 南美洲 — 哪个洲主宰世界杯2026？</span>
-          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join en-text">Join BK8 Free →</a>
-          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join zh-text" style="display:none">免费加入BK8 →</a>
-        </div>
-      </a>
-      <a class="carousel-slide" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
-        <img src="banners/bk8_banner_portugal_ronaldo.jpg" alt="BK8 — Will Portugal Win?">
-        <div class="carousel-overlay">
-          <span class="carousel-text en-text">🇵🇹 Will Ronaldo finally win the World Cup at 41?</span>
-          <span class="carousel-text zh-text" style="display:none">🇵🇹 41岁的C罗能赢得世界杯吗？</span>
-          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join en-text">Join BK8 Free →</a>
-          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join zh-text" style="display:none">免费加入BK8 →</a>
-        </div>
-      </a>
-      <a class="carousel-slide" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
-        <img src="banners/bk8_banner_highscoring.jpg" alt="BK8 — High Scoring WC?">
-        <div class="carousel-overlay">
-          <span class="carousel-text en-text">⚽ Will WC2026 be the highest-scoring World Cup ever?</span>
-          <span class="carousel-text zh-text" style="display:none">⚽ 世界杯2026会是史上进球最多的世界杯吗？</span>
-          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join en-text">Join BK8 Free →</a>
-          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join zh-text" style="display:none">免费加入BK8 →</a>
-        </div>
-      </a>
-      <a class="carousel-slide" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
-        <img src="banners/bk8_banner_france_vs_spain.jpg" alt="BK8 — France vs Spain">
-        <div class="carousel-overlay">
-          <span class="carousel-text en-text">🏆 France vs Spain — Who lifts the trophy on July 19?</span>
-          <span class="carousel-text zh-text" style="display:none">🏆 法国 vs 西班牙 — 谁将在7月19日举起奖杯？</span>
-          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join en-text">Join BK8 Free →</a>
-          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join zh-text" style="display:none">免费加入BK8 →</a>
-        </div>
-      </a>
+
+<!-- BK8 4-BANNER GRID -->
+<div class="bk8-banner-section">
+  <div class="bk8-banner-label">
+    <div class="bk8-label-left">
+      <span class="bk8-sp en-text">Sponsored</span>
+      <span class="bk8-sp zh-text" style="display:none">赞助商</span>
+      <span class="bk8-name">BK8</span>
+      <span class="bk8-offer en-text">— You Play, We Pay up to 200!</span>
+      <span class="bk8-offer zh-text" style="display:none">— 您玩，我们最高赔付200！</span>
     </div>
-    <!-- Arrows -->
-    <button class="carousel-btn prev" onclick="carouselMove(-1)">&#8592;</button>
-    <button class="carousel-btn next" onclick="carouselMove(1)">&#8594;</button>
-    <!-- Dots -->
-    <div class="carousel-dots" id="carousel-dots"></div>
+    <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" style="font-size:12px;color:var(--gold);font-weight:700;text-decoration:none;">
+      <span class="en-text">Join Free →</span>
+      <span class="zh-text" style="display:none">免费加入 →</span>
+    </a>
+  </div>
+  <div class="bk8-grid">
+    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+      <img src="banners/bk8_banner_europe_vs_southamerica.jpg" alt="BK8 Europe vs South America">
+      <div class="bk8-card-foot">
+        <span class="bk8-card-title en-text">Europe vs South America</span>
+        <span class="bk8-card-title zh-text" style="display:none">欧洲 vs 南美洲</span>
+        <span class="bk8-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+      <img src="banners/bk8_banner_portugal_ronaldo.jpg" alt="BK8 Portugal Ronaldo">
+      <div class="bk8-card-foot">
+        <span class="bk8-card-title en-text">Will Portugal Win?</span>
+        <span class="bk8-card-title zh-text" style="display:none">葡萄牙能赢吗？</span>
+        <span class="bk8-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+      <img src="banners/bk8_banner_highscoring.jpg" alt="BK8 High Scoring WC">
+      <div class="bk8-card-foot">
+        <span class="bk8-card-title en-text">High-Scoring World Cup?</span>
+        <span class="bk8-card-title zh-text" style="display:none">高进球世界杯？</span>
+        <span class="bk8-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+      <img src="banners/bk8_banner_france_vs_spain.jpg" alt="BK8 France vs Spain">
+      <div class="bk8-card-foot">
+        <span class="bk8-card-title en-text">France vs Spain</span>
+        <span class="bk8-card-title zh-text" style="display:none">法国 vs 西班牙</span>
+        <span class="bk8-card-btn">JOIN</span>
+      </div>
+    </a>
   </div>
 </div>
 
@@ -1259,49 +1248,7 @@ populateSels();
 setInterval(cd,1000);
 cd();
 
-/* ── BK8 BANNER CAROUSEL JS ── */
-(function(){
-  let cur = 0;
-  const slides = document.querySelectorAll('.carousel-slide');
-  const track  = document.getElementById('carousel-track');
-  const dotsEl = document.getElementById('carousel-dots');
-  const total  = slides.length;
-  let timer;
 
-  // Build dots
-  for(let i=0;i<total;i++){
-    const d=document.createElement('button');
-    d.className='c-dot'+(i===0?' active':'');
-    d.onclick=()=>goTo(i);
-    dotsEl.appendChild(d);
-  }
-
-  function goTo(n){
-    cur=((n%total)+total)%total;
-    track.style.transform=`translateX(-${cur*100}%)`;
-    document.querySelectorAll('.c-dot').forEach((d,i)=>{
-      d.classList.toggle('active',i===cur);
-    });
-    resetTimer();
-  }
-
-  function resetTimer(){
-    clearInterval(timer);
-    timer=setInterval(()=>goTo(cur+1), 4500);
-  }
-
-  window.carouselMove=function(dir){goTo(cur+dir);}
-
-  // Start auto-play
-  resetTimer();
-
-  // Pause on hover
-  const carousel=document.getElementById('bk8-carousel');
-  if(carousel){
-    carousel.addEventListener('mouseenter',()=>clearInterval(timer));
-    carousel.addEventListener('mouseleave',resetTimer);
-  }
-})();
 
 </script>
 </body>
