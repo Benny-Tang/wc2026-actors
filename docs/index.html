@@ -32,18 +32,18 @@
 html{scroll-behavior:smooth;}
 body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;overflow-x:hidden;line-height:1.6;}
 
-/* ── BANNER SLIDER ── */
-.banner-slider{width:100%;background:#000;overflow:hidden;position:relative;height:110px;cursor:pointer;}
-.banner-track{display:flex;animation:bannerScroll 28s linear infinite;height:100%;}
-.banner-track:hover{animation-play-state:paused;}
-.banner-slide{flex-shrink:0;height:100%;position:relative;}
-.banner-slide img{height:100%;width:auto;object-fit:cover;}
-.banner-cta{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:var(--gold);color:#000;padding:7px 14px;border-radius:4px;font-size:11px;font-weight:800;letter-spacing:1px;white-space:nowrap;pointer-events:none;}
-@keyframes bannerScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 /* ── TICKER ── */
-.ticker{background:var(--gold);color:#000;padding:6px 0;overflow:hidden;font-size:12px;font-weight:700;letter-spacing:0.5px;}
-.ticker-inner{display:flex;gap:0;animation:ticker 40s linear infinite;white-space:nowrap;}
-.ticker-item{padding:0 32px;}
+.ticker{
+  background:var(--gold);color:#000;
+  padding:8px 0;overflow:hidden;
+  font-size:13px;font-weight:700;letter-spacing:0.5px;
+}
+.ticker-inner{
+  display:flex;gap:0;
+  animation:ticker 40s linear infinite;
+  white-space:nowrap;
+}
+.ticker-item{padding:0 40px;}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ── NAV ── */
@@ -499,25 +499,94 @@ footer{
   .vs-pill{display:none;}
   .ft-bot{flex-direction:column;text-align:center;}
 }
+
+/* ── BK8 BANNER CAROUSEL (Option D) ── */
+.bk8-carousel{
+  padding:0;
+  background:#000;
+  position:relative;
+  overflow:hidden;
+}
+.carousel-label{
+  position:absolute;top:12px;left:16px;z-index:10;
+  background:rgba(0,0,0,0.6);
+  color:var(--gold);
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  padding:4px 10px;border-radius:3px;
+  text-transform:uppercase;
+}
+.carousel-track{
+  display:flex;
+  transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  will-change:transform;
+}
+.carousel-slide{
+  flex-shrink:0;
+  width:100%;
+  position:relative;
+  cursor:pointer;
+}
+.carousel-slide img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.carousel-overlay{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  background:linear-gradient(transparent, rgba(0,0,0,0.75));
+  padding:24px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.carousel-text{font-size:15px;color:rgba(255,255,255,0.9);font-weight:500;}
+.carousel-join{
+  background:var(--gold);color:#000;
+  padding:12px 28px;border-radius:6px;
+  font-weight:800;font-size:15px;letter-spacing:1px;
+  text-decoration:none;white-space:nowrap;
+  transition:all 0.2s;
+}
+.carousel-join:hover{background:var(--gold2);transform:scale(1.03);}
+/* Dots */
+.carousel-dots{
+  position:absolute;bottom:16px;left:50%;
+  transform:translateX(-50%);
+  display:flex;gap:8px;z-index:10;
+}
+.c-dot{
+  width:8px;height:8px;border-radius:50%;
+  background:rgba(255,255,255,0.35);
+  cursor:pointer;transition:all 0.3s;border:none;
+}
+.c-dot.active{background:var(--gold);width:24px;border-radius:4px;}
+/* Arrows */
+.carousel-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.2);
+  color:#fff;width:44px;height:44px;border-radius:50%;
+  font-size:18px;cursor:pointer;z-index:10;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;
+}
+.carousel-btn:hover{background:rgba(255,215,0,0.3);border-color:var(--gold);}
+.carousel-btn.prev{left:16px;}
+.carousel-btn.next{right:16px;}
+/* Sponsored label */
+.sponsored-bar{
+  background:var(--navy3);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:8px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.sp-label{font-size:10px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;}
+.sp-brand{font-size:13px;font-weight:700;color:var(--gold);}
 </style>
 </head>
 <body>
 
-<!-- BANNER SLIDER -->
-<a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" style="display:block;text-decoration:none;">
-  <div class="banner-slider">
-    <div class="banner-track">
-      <div class="banner-slide"><img src="banners/bk8_banner_europe_vs_southamerica.jpg" alt="BK8 WC2026"><div class="banner-cta">JOIN BK8 FREE</div></div>
-      <div class="banner-slide"><img src="banners/bk8_banner_portugal_ronaldo.jpg" alt="BK8 Ronaldo"><div class="banner-cta">JOIN BK8 FREE</div></div>
-      <div class="banner-slide"><img src="banners/bk8_banner_highscoring.jpg" alt="BK8 WC2026"><div class="banner-cta">JOIN BK8 FREE</div></div>
-      <div class="banner-slide"><img src="banners/bk8_banner_france_vs_spain.jpg" alt="BK8 France vs Spain"><div class="banner-cta">JOIN BK8 FREE</div></div>
-      <div class="banner-slide"><img src="banners/bk8_banner_europe_vs_southamerica.jpg" alt="BK8 WC2026"><div class="banner-cta">JOIN BK8 FREE</div></div>
-      <div class="banner-slide"><img src="banners/bk8_banner_portugal_ronaldo.jpg" alt="BK8 Ronaldo"><div class="banner-cta">JOIN BK8 FREE</div></div>
-      <div class="banner-slide"><img src="banners/bk8_banner_highscoring.jpg" alt="BK8 WC2026"><div class="banner-cta">JOIN BK8 FREE</div></div>
-      <div class="banner-slide"><img src="banners/bk8_banner_france_vs_spain.jpg" alt="BK8 France vs Spain"><div class="banner-cta">JOIN BK8 FREE</div></div>
-    </div>
-  </div>
-</a>
 <!-- TEXT TICKER -->
 <div class="ticker" aria-label="Live news ticker">
   <div class="ticker-inner" id="ticker-inner"></div>
@@ -771,6 +840,64 @@ footer{
     </div>
   </div>
 </section>
+
+
+<!-- BK8 BANNER CAROUSEL — Option D -->
+<div style="position:relative;">
+  <div class="sponsored-bar">
+    <span class="sp-label en-text">Sponsored Partner</span>
+    <span class="sp-label zh-text" style="display:none">赞助合作伙伴</span>
+    <span class="sp-brand">BK8 — Biggest & Most Trusted</span>
+    <span class="sp-label en-text">You Play, We Pay up to 200!</span>
+    <span class="sp-label zh-text" style="display:none">您玩，我们最高赔付200！</span>
+  </div>
+  <div class="bk8-carousel" id="bk8-carousel">
+    <div class="carousel-label">🏆 WC2026 OFFICIAL PARTNER</div>
+    <div class="carousel-track" id="carousel-track">
+      <a class="carousel-slide" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+        <img src="banners/bk8_banner_europe_vs_southamerica.jpg" alt="BK8 — Which Continent Wins WC2026?">
+        <div class="carousel-overlay">
+          <span class="carousel-text en-text">🌍 Europe vs South America — Which continent dominates WC2026?</span>
+          <span class="carousel-text zh-text" style="display:none">🌍 欧洲 vs 南美洲 — 哪个洲主宰世界杯2026？</span>
+          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join en-text">Join BK8 Free →</a>
+          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join zh-text" style="display:none">免费加入BK8 →</a>
+        </div>
+      </a>
+      <a class="carousel-slide" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+        <img src="banners/bk8_banner_portugal_ronaldo.jpg" alt="BK8 — Will Portugal Win?">
+        <div class="carousel-overlay">
+          <span class="carousel-text en-text">🇵🇹 Will Ronaldo finally win the World Cup at 41?</span>
+          <span class="carousel-text zh-text" style="display:none">🇵🇹 41岁的C罗能赢得世界杯吗？</span>
+          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join en-text">Join BK8 Free →</a>
+          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join zh-text" style="display:none">免费加入BK8 →</a>
+        </div>
+      </a>
+      <a class="carousel-slide" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+        <img src="banners/bk8_banner_highscoring.jpg" alt="BK8 — High Scoring WC?">
+        <div class="carousel-overlay">
+          <span class="carousel-text en-text">⚽ Will WC2026 be the highest-scoring World Cup ever?</span>
+          <span class="carousel-text zh-text" style="display:none">⚽ 世界杯2026会是史上进球最多的世界杯吗？</span>
+          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join en-text">Join BK8 Free →</a>
+          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join zh-text" style="display:none">免费加入BK8 →</a>
+        </div>
+      </a>
+      <a class="carousel-slide" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+        <img src="banners/bk8_banner_france_vs_spain.jpg" alt="BK8 — France vs Spain">
+        <div class="carousel-overlay">
+          <span class="carousel-text en-text">🏆 France vs Spain — Who lifts the trophy on July 19?</span>
+          <span class="carousel-text zh-text" style="display:none">🏆 法国 vs 西班牙 — 谁将在7月19日举起奖杯？</span>
+          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join en-text">Join BK8 Free →</a>
+          <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" class="carousel-join zh-text" style="display:none">免费加入BK8 →</a>
+        </div>
+      </a>
+    </div>
+    <!-- Arrows -->
+    <button class="carousel-btn prev" onclick="carouselMove(-1)">&#8592;</button>
+    <button class="carousel-btn next" onclick="carouselMove(1)">&#8594;</button>
+    <!-- Dots -->
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+</div>
 
 <!-- WATCH LIVE (Soft Affiliate) -->
 <section class="watch-sec" id="watch">
@@ -1131,6 +1258,51 @@ renderWatch();
 populateSels();
 setInterval(cd,1000);
 cd();
+
+/* ── BK8 BANNER CAROUSEL JS ── */
+(function(){
+  let cur = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const track  = document.getElementById('carousel-track');
+  const dotsEl = document.getElementById('carousel-dots');
+  const total  = slides.length;
+  let timer;
+
+  // Build dots
+  for(let i=0;i<total;i++){
+    const d=document.createElement('button');
+    d.className='c-dot'+(i===0?' active':'');
+    d.onclick=()=>goTo(i);
+    dotsEl.appendChild(d);
+  }
+
+  function goTo(n){
+    cur=((n%total)+total)%total;
+    track.style.transform=`translateX(-${cur*100}%)`;
+    document.querySelectorAll('.c-dot').forEach((d,i)=>{
+      d.classList.toggle('active',i===cur);
+    });
+    resetTimer();
+  }
+
+  function resetTimer(){
+    clearInterval(timer);
+    timer=setInterval(()=>goTo(cur+1), 4500);
+  }
+
+  window.carouselMove=function(dir){goTo(cur+dir);}
+
+  // Start auto-play
+  resetTimer();
+
+  // Pause on hover
+  const carousel=document.getElementById('bk8-carousel');
+  if(carousel){
+    carousel.addEventListener('mouseenter',()=>clearInterval(timer));
+    carousel.addEventListener('mouseleave',resetTimer);
+  }
+})();
+
 </script>
 </body>
 </html>
