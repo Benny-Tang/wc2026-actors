@@ -583,6 +583,76 @@ footer{
 @media(max-width:480px){
   .bk8-grid{grid-template-columns:1fr;}
 }
+
+/* ── NOVA88 BANNER ROW ── */
+.nova88-section{
+  background:var(--navy2);
+  border-top:1px solid var(--border);
+  padding:20px 40px;
+}
+.nova88-label{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
+.n88-sp{font-size:10px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;}
+.n88-name{font-size:14px;font-weight:800;color:#ff6600;}
+.n88-offer{font-size:12px;color:rgba(255,255,255,0.6);}
+.nova88-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.n88-card{
+  position:relative;border-radius:8px;
+  overflow:hidden;cursor:pointer;
+  border:1px solid rgba(255,102,0,0.2);
+  transition:all 0.25s;
+  text-decoration:none;
+  display:flex;flex-direction:column;
+  background:#03062a;
+}
+.n88-card:hover{
+  border-color:rgba(255,102,0,0.6);
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,0,0,0.5);
+}
+.n88-card img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+  background:#0d1b40;
+}
+.n88-card-foot{
+  padding:8px 12px;
+  background:linear-gradient(135deg,rgba(255,102,0,0.12),rgba(255,102,0,0.05));
+  border-top:1px solid rgba(255,102,0,0.2);
+  display:flex;align-items:center;
+  justify-content:space-between;gap:8px;
+}
+.n88-card-title{
+  font-size:11px;font-weight:600;
+  color:rgba(255,255,255,0.85);
+  line-height:1.3;flex:1;
+}
+.n88-card-btn{
+  background:#ff6600;color:#fff;
+  font-size:10px;font-weight:800;
+  padding:5px 10px;border-radius:3px;
+  white-space:nowrap;letter-spacing:0.5px;
+  flex-shrink:0;
+}
+.n88-aff-tag{
+  text-align:center;
+  font-size:10px;color:var(--gray);
+  letter-spacing:1px;margin-top:10px;
+}
+@media(max-width:768px){
+  .nova88-grid{grid-template-columns:1fr;}
+  .nova88-section{padding:16px 20px;}
+}
 </style>
 </head>
 <body>
@@ -927,6 +997,52 @@ footer{
         <span class="bk8-card-btn">JOIN</span>
       </div>
     </a>
+  </div>
+</div>
+
+<!-- NOVA88 BANNER ROW -->
+<div class="nova88-section">
+  <div class="nova88-label">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span class="n88-sp en-text">Official Partner</span>
+      <span class="n88-sp zh-text" style="display:none">官方合作伙伴</span>
+      <span class="n88-name">NOVA88</span>
+      <span class="n88-offer en-text">— Asia's #1 Licensed Sportsbook · 20 Years Trusted</span>
+      <span class="n88-offer zh-text" style="display:none">— 亚洲第一持牌博彩平台 · 20年信誉</span>
+    </div>
+    <a href="https://goto.nova88105.net/promotion/34839/en/telegram/index.html" target="_blank" style="font-size:12px;color:#ff6600;font-weight:700;text-decoration:none;">
+      <span class="en-text">Join Free →</span>
+      <span class="zh-text" style="display:none">免费加入 →</span>
+    </a>
+  </div>
+  <div class="nova88-grid">
+    <a class="n88-card" href="https://goto.nova88105.net/promotion/34839/en/telegram/index.html" target="_blank">
+      <img src="banners/nova88_banner_150_sportsbook.jpg" alt="Nova88 150% Sportsbook Welcome Bonus">
+      <div class="n88-card-foot">
+        <span class="n88-card-title en-text">150% Sportsbook Welcome Bonus</span>
+        <span class="n88-card-title zh-text" style="display:none">150% 体育投注迎新奖金</span>
+        <span class="n88-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="n88-card" href="https://goto.nova88105.net/promotion/34839/en/telegram/index.html" target="_blank">
+      <img src="banners/nova88_banner_100_sports.jpg" alt="Nova88 100% Nova Sports Welcome Bonus">
+      <div class="n88-card-foot">
+        <span class="n88-card-title en-text">100% Nova Sports Welcome Bonus</span>
+        <span class="n88-card-title zh-text" style="display:none">100% Nova体育迎新奖金</span>
+        <span class="n88-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="n88-card" href="https://goto.nova88105.net/promotion/34839/en/telegram/index.html" target="_blank">
+      <img src="banners/nova88_banner_288_slot.jpg" alt="Nova88 288% Slot Welcome Bonus">
+      <div class="n88-card-foot">
+        <span class="n88-card-title en-text">288% Slots Welcome Bonus</span>
+        <span class="n88-card-title zh-text" style="display:none">288% 老虎机迎新奖金</span>
+        <span class="n88-card-btn">JOIN</span>
+      </div>
+    </a>
+  </div>
+  <div class="n88-aff-tag">
+    Affiliate ID: 34839 · Username: N88AFF3889 · Nova88 Official Partner
   </div>
 </div>
 
