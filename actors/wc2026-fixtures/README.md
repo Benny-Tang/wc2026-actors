@@ -1,72 +1,37 @@
-# ⚽ FIFA World Cup 2026 — Fixture & Group Scraper
+# WC2026 Fixture Scraper | FIFA World Cup 2026 | 世界杯2026赛程数据
 
-> **世界杯2026赛程抓取器** | 抓取全部104场赛程、分组数据、场馆信息
+**Keywords**: WC2026 fixtures, World Cup 2026 schedule, FIFA 2026 API, football fixtures scraper, soccer schedule 2026, Asian Handicap data, 世界杯2026赛程, 足球赛程API, 竞彩数据
 
-Scrape all **104 FIFA World Cup 2026 fixtures** across 12 groups and 48 teams.
-Returns structured JSON — ready for betting platforms, fantasy apps, and sports media.
+Scrape all **104 FIFA World Cup 2026 fixtures** across 12 groups and 48 teams. Perfect for betting platforms, fantasy apps, tipster services and sports media targeting the Chinese-speaking Asia-Pacific market.
 
----
-
-## 📊 What You Get
-
-Each fixture record contains:
+## What You Get
 
 | Field | Description |
 |---|---|
-| `match_id` | Official FIFA match number |
+| `match_id` | FIFA match number |
 | `group` | Group A–L or knockout round |
-| `date` | Match date (YYYY-MM-DD) |
+| `date` | Match date YYYY-MM-DD |
 | `kickoff_local` | Local kickoff time |
-| `timezone` | Venue timezone (EDT/CDT/PDT) |
-| `home_team` / `away_team` | Team names (English or Chinese) |
-| `venue` | Stadium name |
-| `city` | Host city |
-| `home_score` / `away_score` | Result (when available) |
-| `status` | `scheduled` / `live` / `finished` |
+| `home_team` / `away_team` | Team names EN/中文/BM |
+| `venue` / `city` | Stadium and host city |
+| `status` | scheduled / live / finished |
 
----
+## Input Options
 
-## 🔧 Input Options
+| Option | Default | Description |
+|---|---|---|
+| `filter_group` | all | Filter by group A–L |
+| `filter_team` | all | Filter by team name |
+| `language` | en | en / zh-CN / zh-TW |
 
-| Option | Type | Default | Description |
-|---|---|---|---|
-| `filter_group` | string | `""` | Filter by group (A–L) or round |
-| `filter_team` | string | `""` | Filter by team name |
-| `include_results` | boolean | `true` | Include scores |
-| `language` | string | `"en"` | `en` / `zh-CN` / `zh-TW` |
-
----
-
-## 📦 Example Output
-
-```json
-{
-  "match_id": 7,
-  "group": "C",
-  "date": "2026-06-13",
-  "kickoff_local": "18:00",
-  "timezone": "EDT",
-  "venue": "MetLife Stadium",
-  "city": "New York/New Jersey",
-  "home_team": "Brazil",
-  "away_team": "Morocco",
-  "status": "scheduled",
-  "home_score": null,
-  "away_score": null,
-  "result": null
-}
-```
-
----
-
-## 🌏 All 12 Groups (48 Teams)
+## All 12 Groups — 48 Teams
 
 | Group | Teams |
 |---|---|
 | A | Mexico, South Korea, South Africa, Czechia |
-| B | Canada, Switzerland, Qatar, Bosnia-Herzegovina |
+| B | Canada, Switzerland, Qatar, Bosnia |
 | C | Brazil, Morocco, Haiti, Scotland |
-| D | United States, Paraguay, Australia, Türkiye |
+| D | USA, Paraguay, Australia, Türkiye |
 | E | Germany, Curaçao, Ivory Coast, Ecuador |
 | F | Netherlands, Japan, Sweden, Tunisia |
 | G | Belgium, Egypt, Iran, New Zealand |
@@ -76,30 +41,23 @@ Each fixture record contains:
 | K | Portugal, DR Congo, Uzbekistan, Colombia |
 | L | England, Croatia, Ghana, Panama |
 
----
+## Who Uses This Actor
 
-## 🎯 Who Uses This Actor
+- Betting affiliates & tipster platforms (MY, SG, HK, TW)
+- Fantasy football app developers
+- Sports media — WeChat, Weibo, Telegram channels
+- AI/RAG pipelines for LLM match previews
+- n8n / Zapier / Make automation workflows
 
-- **Betting affiliate websites** — match preview content
-- **Tipster platforms** — fixture data for picks
-- **Fantasy football apps** — group stage data
-- **Sports media** — WeChat/Weibo content automation
-- **AI/RAG pipelines** — structured input for LLM match previews
-- **n8n / Make / Zapier** — automated matchday workflows
+## Pair With
 
----
+👉 **WC2026 AI Match Predictor** — win/draw/loss % + Asian Handicap picks
+`apify.com/kindly_bolt/wc2026-actors-1`
 
-## 🔗 Pair With
+## Tags
+WC2026, World Cup 2026, FIFA 2026, football, soccer, fixtures, schedule,
+Asian Handicap, 世界杯, 赛程, 亚盘, Malaysia, Singapore, Hong Kong, Taiwan,
+Asia Pacific, betting, fantasy football, tipster, 竞彩
 
-- **WC2026 Match Predictor** — AI-powered win probabilities + Asian Handicap picks
-- **WC2026 Asian Handicap Odds Tracker** — coming soon
-
----
-
-*Data source: FIFA official / Wikipedia public structured data*
-*Updated: daily during tournament | Tournament: June 11 – July 19, 2026*
-
----
-
-**中文说明** | 本Actor抓取2026年FIFA世界杯全部104场赛程数据，支持按分组或球队筛选，
-输出结构化JSON数据，支持简体中文/繁体中文/英文输出。适合博彩平台、竞彩用户、幻想足球应用和体育媒体使用。
+*Tournament: June 11 – July 19, 2026 · 104 matches · 48 teams · 3 host nations*
+*数据支持简体中文与繁体中文输出 · Data updated daily during tournament*
