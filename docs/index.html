@@ -652,6 +652,57 @@ footer{
   .nova88-grid{grid-template-columns:repeat(2,1fr);}
   .nova88-section{padding:16px 20px;}
 }
+
+/* ── HELLPARTNERS ── */
+.hp-section{background:var(--navy2);border-top:2px solid rgba(204,0,0,0.4);padding:20px 40px;}
+.hp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.hp-title{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.hp-sp{font-size:10px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;}
+.hp-name{font-size:15px;font-weight:900;color:#cc0000;letter-spacing:1px;}
+.hp-offer{font-size:12px;color:rgba(255,255,255,0.5);}
+.hp-join-link{font-size:12px;color:#cc0000;font-weight:700;text-decoration:none;white-space:nowrap;}
+.hp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.hp-race-card{
+  grid-column:span 2;border-radius:8px;
+  border:1px solid rgba(204,0,0,0.4);
+  background:linear-gradient(135deg,#2d0808,#1a0505);
+  padding:20px 24px;display:flex;align-items:center;
+  justify-content:space-between;text-decoration:none;
+  transition:all 0.25s;height:200px;
+}
+.hp-race-card:hover{border-color:rgba(204,0,0,0.8);transform:translateY(-4px);}
+.hp-race-label{font-size:10px;letter-spacing:3px;color:#cc0000;text-transform:uppercase;margin-bottom:8px;}
+.hp-race-title{font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;line-height:1.2;}
+.hp-race-detail{font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:3px;}
+.hp-race-prize{font-size:48px;font-weight:900;color:var(--gold);line-height:1;text-align:right;}
+.hp-race-sub{font-size:10px;color:rgba(255,255,255,0.4);text-align:right;}
+.hp-race-prizes{font-size:10px;color:rgba(255,255,255,0.35);text-align:right;line-height:1.7;margin-top:8px;}
+.hp-race-btn{display:inline-block;background:#cc0000;color:#fff;padding:9px 18px;border-radius:5px;font-weight:800;font-size:12px;margin-top:10px;}
+.hp-brand-card{
+  border-radius:8px;overflow:hidden;cursor:pointer;
+  border:1px solid rgba(204,0,0,0.25);transition:all 0.25s;
+  text-decoration:none;display:flex;flex-direction:column;
+  background:linear-gradient(135deg,#1a0505,#0d0000);
+  height:200px;
+}
+.hp-brand-card:hover{border-color:rgba(204,0,0,0.7);transform:translateY(-4px);box-shadow:0 12px 32px rgba(204,0,0,0.2);}
+.hp-brand-body{padding:18px;flex:1;display:flex;flex-direction:column;}
+.hp-brand-name{font-size:26px;font-weight:900;letter-spacing:-0.5px;margin-bottom:3px;}
+.hp-hs{color:#cc0000;}
+.hp-iv{color:#ff6600;}
+.hp-brand-sub{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:10px;}
+.hp-feat{font-size:11px;color:rgba(255,255,255,0.65);display:block;margin-bottom:3px;}
+.hp-cta{display:block;padding:8px;border-radius:5px;font-weight:800;font-size:11px;letter-spacing:1px;text-align:center;margin-top:auto;}
+.hp-cta-hs{background:#cc0000;color:#fff;}
+.hp-cta-iv{background:#ff6600;color:#fff;}
+.hp-aff-tag{text-align:center;font-size:10px;color:var(--gray);letter-spacing:1px;margin-top:10px;}
+@media(max-width:768px){
+  .hp-grid{grid-template-columns:repeat(2,1fr);}
+  .hp-race-card{grid-column:span 2;height:auto;}
+  .hp-brand-card{height:auto;}
+  .hp-section{padding:16px 20px;}
+}
+
 </style>
 </head>
 <body>
@@ -946,13 +997,13 @@ footer{
       <span class="bk8-offer en-text">— You Play, We Pay up to 200!</span>
       <span class="bk8-offer zh-text" style="display:none">— 您玩，我们最高赔付200！</span>
     </div>
-    <a href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank" style="font-size:12px;color:var(--gold);font-weight:700;text-decoration:none;">
+    <a href="https://www.bktkit.com/register?affid=64728" target="_blank" style="font-size:12px;color:var(--gold);font-weight:700;text-decoration:none;">
       <span class="en-text">Join Free →</span>
       <span class="zh-text" style="display:none">免费加入 →</span>
     </a>
   </div>
   <div class="bk8-grid">
-    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+    <a class="bk8-card" href="https://www.bktkit.com/register?affid=64728" target="_blank">
       <img src="banners/bk8_banner_europe_vs_southamerica.jpg" alt="BK8 Europe vs South America">
       <div class="bk8-card-foot">
         <span class="bk8-card-title en-text">Europe vs South America</span>
@@ -960,7 +1011,7 @@ footer{
         <span class="bk8-card-btn">JOIN</span>
       </div>
     </a>
-    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+    <a class="bk8-card" href="https://www.bktkit.com/register?affid=64728" target="_blank">
       <img src="banners/bk8_banner_portugal_ronaldo.jpg" alt="BK8 Portugal Ronaldo">
       <div class="bk8-card-foot">
         <span class="bk8-card-title en-text">Will Portugal Win?</span>
@@ -968,7 +1019,7 @@ footer{
         <span class="bk8-card-btn">JOIN</span>
       </div>
     </a>
-    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+    <a class="bk8-card" href="https://www.bktkit.com/register?affid=64728" target="_blank">
       <img src="banners/bk8_banner_highscoring.jpg" alt="BK8 High Scoring WC">
       <div class="bk8-card-foot">
         <span class="bk8-card-title en-text">High-Scoring World Cup?</span>
@@ -976,7 +1027,7 @@ footer{
         <span class="bk8-card-btn">JOIN</span>
       </div>
     </a>
-    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+    <a class="bk8-card" href="https://www.bktkit.com/register?affid=64728" target="_blank">
       <img src="banners/bk8_banner_france_vs_spain.jpg" alt="BK8 France vs Spain">
       <div class="bk8-card-foot">
         <span class="bk8-card-title en-text">France vs Spain</span>
@@ -988,7 +1039,7 @@ footer{
 
   <!-- ROW 2 -->
   <div class="bk8-grid" style="margin-top:12px;">
-    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+    <a class="bk8-card" href="https://www.bktkit.com/register?affid=64728" target="_blank">
       <img src="banners/bk8_banner_korea_vs_czechia.jpg" alt="BK8 South Korea vs Czechia">
       <div class="bk8-card-foot">
         <span class="bk8-card-title en-text">South Korea vs Czechia · Jun 12</span>
@@ -996,7 +1047,7 @@ footer{
         <span class="bk8-card-btn">BET</span>
       </div>
     </a>
-    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+    <a class="bk8-card" href="https://www.bktkit.com/register?affid=64728" target="_blank">
       <img src="banners/bk8_banner_288_chinese.jpg" alt="BK8 288% 迎新奖金">
       <div class="bk8-card-foot">
         <span class="bk8-card-title en-text">288% Welcome Bonus 中文</span>
@@ -1004,7 +1055,7 @@ footer{
         <span class="bk8-card-btn">JOIN</span>
       </div>
     </a>
-    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+    <a class="bk8-card" href="https://www.bktkit.com/register?affid=64728" target="_blank">
       <img src="banners/bk8_banner_288_malay.jpg" alt="BK8 288% Bonus Selamat Datang">
       <div class="bk8-card-foot">
         <span class="bk8-card-title en-text">288% Bonus — Malay</span>
@@ -1012,7 +1063,7 @@ footer{
         <span class="bk8-card-btn">JOIN</span>
       </div>
     </a>
-    <a class="bk8-card" href="https://www.bk8mlysia.com/en-my/register?refid=addczqmb" target="_blank">
+    <a class="bk8-card" href="https://www.bktkit.com/register?affid=64728" target="_blank">
       <img src="banners/bk8_banner_288_english.jpg" alt="BK8 Have You BK8?">
       <div class="bk8-card-foot">
         <span class="bk8-card-title en-text">288% Welcome Bonus</span>
@@ -1080,6 +1131,106 @@ footer{
   </div>
   <div class="n88-aff-tag">
     Affiliate ID: 34839 · Username: N88AFF3889 · Nova88 Official Partner · Road to WC2026 $268,000 Prize Pool
+  </div>
+</div>
+
+<!-- HELLPARTNERS SECTION -->
+<div class="hp-section">
+  <div class="hp-header">
+    <div class="hp-title">
+      <span class="hp-sp en-text">Official Partner</span>
+      <span class="hp-sp zh-text" style="display:none">官方合作伙伴</span>
+      <span class="hp-sp my-text" style="display:none">Rakan Rasmi</span>
+      <span class="hp-name">⚡ HELL PARTNERS</span>
+      <span class="hp-offer en-text">— HellSpin · IviBet · MY · SG · HK · TW · CN · ID · CPA €30 + 30% RevShare</span>
+      <span class="hp-offer zh-text" style="display:none">— 马来西亚·新加坡·香港·台湾·中国·印尼 · CPA €30 + 30% RevShare</span>
+      <span class="hp-offer my-text" style="display:none">— MY · SG · HK · TW · CN · ID · CPA €30 + 30% RevShare</span>
+    </div>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank" class="hp-join-link en-text">Join Free →</a>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank" class="hp-join-link zh-text" style="display:none">免费加入 →</a>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank" class="hp-join-link my-text" style="display:none">Sertai Percuma →</a>
+  </div>
+  <div class="hp-grid">
+
+    <!-- WC2026 Race — spans 2 cols -->
+    <a class="hp-race-card" href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank">
+      <div>
+        <div class="hp-race-label en-text">🏁 WC2026 AFFILIATE RACE</div>
+        <div class="hp-race-label zh-text" style="display:none">🏁 世界杯联盟竞赛</div>
+        <div class="hp-race-label my-text" style="display:none">🏁 LUMBA AFILIASI WC2026</div>
+        <div class="hp-race-title en-text">Run Traffic.<br>Take the Prize.</div>
+        <div class="hp-race-title zh-text" style="display:none">带来流量。<br>赢取大奖。</div>
+        <div class="hp-race-title my-text" style="display:none">Jana Trafik.<br>Menang Hadiah.</div>
+        <div class="hp-race-detail en-text">📅 May 15 – July 15, 2026</div>
+        <div class="hp-race-detail en-text">🎯 Min 10 FTD · Top 10 win cash prizes</div>
+        <div class="hp-race-detail en-text">🌏 MY · SG · HK · TW · CN · ID</div>
+        <div class="hp-race-detail zh-text" style="display:none">📅 5月15日–7月15日 · 最少10个首存 · 覆盖中国大陆</div>
+        <div class="hp-race-detail my-text" style="display:none">📅 15 Mei–15 Julai · Min 10 FTD · MY,SG,HK,TW,CN,ID</div>
+        <div class="hp-race-btn en-text">Join the Race →</div>
+        <div class="hp-race-btn zh-text" style="display:none">参加竞赛 →</div>
+        <div class="hp-race-btn my-text" style="display:none">Sertai Lumba →</div>
+      </div>
+      <div>
+        <div class="hp-race-prize">€20K</div>
+        <div class="hp-race-sub en-text">Total Prize Pool</div>
+        <div class="hp-race-sub zh-text" style="display:none">总奖池</div>
+        <div class="hp-race-prizes">
+          1st: €5,000<br>2nd: €4,000<br>
+          3rd: €3,000<br>4-5: €2,000<br>
+          6-10: €1,000
+        </div>
+      </div>
+    </a>
+
+    <!-- HellSpin -->
+    <a class="hp-brand-card" href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank">
+      <div class="hp-brand-body">
+        <div>
+          <div class="hp-brand-name hp-hs">HELLSPIN</div>
+          <div class="hp-brand-sub en-text">Casino + Sportsbook · WC2026</div>
+          <div class="hp-brand-sub zh-text" style="display:none">赌场+体育 · 世界杯2026</div>
+          <div class="hp-brand-sub my-text" style="display:none">Kasino+Sukan · WC2026</div>
+          <span class="hp-feat en-text">⚽ Full WC2026 live betting + Asian Handicap</span>
+          <span class="hp-feat zh-text" style="display:none">⚽ 完整世界杯现场投注+亚盘</span>
+          <span class="hp-feat en-text">🎰 1,000+ casino games · Live dealers</span>
+          <span class="hp-feat zh-text" style="display:none">🎰 1000+游戏·真人荷官</span>
+          <span class="hp-feat en-text">🌏 MYR · SGD · HKD · IDR · USD</span>
+          <span class="hp-feat zh-text" style="display:none">🌏 支持马币·新币·港币·印尼盾</span>
+          <span class="hp-feat en-text">💳 Crypto accepted · Fast payouts</span>
+          <span class="hp-feat zh-text" style="display:none">💳 接受加密货币·快速提款</span>
+        </div>
+        <div class="hp-cta hp-cta-hs en-text">Play at HellSpin →</div>
+        <div class="hp-cta hp-cta-hs zh-text" style="display:none">前往HellSpin →</div>
+        <div class="hp-cta hp-cta-hs my-text" style="display:none">Main di HellSpin →</div>
+      </div>
+    </a>
+
+    <!-- IviBet -->
+    <a class="hp-brand-card" href="https://mio.novarao.com/redirect.aspx?pid=103918&lpid=193&bid=1478" target="_blank">
+      <div class="hp-brand-body">
+        <div>
+          <div class="hp-brand-name hp-iv">IVIBET</div>
+          <div class="hp-brand-sub en-text">Sports + Casino · WC2026</div>
+          <div class="hp-brand-sub zh-text" style="display:none">体育+赌场 · 世界杯2026</div>
+          <div class="hp-brand-sub my-text" style="display:none">Sukan+Kasino · WC2026</div>
+          <span class="hp-feat en-text">⚽ Asian Handicap + WC2026 live odds</span>
+          <span class="hp-feat zh-text" style="display:none">⚽ 亚盘+世界杯现场赔率</span>
+          <span class="hp-feat en-text">🎮 40+ slot providers · Live casino</span>
+          <span class="hp-feat zh-text" style="display:none">🎮 40+老虎机·真人赌场</span>
+          <span class="hp-feat en-text">🌏 MYR · SGD · HKD · IDR · USD</span>
+          <span class="hp-feat zh-text" style="display:none">🌏 支持马币·新币·港币·印尼盾</span>
+          <span class="hp-feat en-text">🏆 VIP program · CPA €30 + 30% RS</span>
+          <span class="hp-feat zh-text" style="display:none">🏆 VIP计划·CPA €30+30% RevShare</span>
+        </div>
+        <div class="hp-cta hp-cta-iv en-text">Play at IviBet →</div>
+        <div class="hp-cta hp-cta-iv zh-text" style="display:none">前往IviBet →</div>
+        <div class="hp-cta hp-cta-iv my-text" style="display:none">Main di IviBet →</div>
+      </div>
+    </a>
+
+  </div>
+  <div class="hp-aff-tag">
+    Affiliate ID: 675975 · Username: kstang88 · CPA €30 + 30% RevShare · GEOs: MY · SG · HK · TW · CN · ID · WC2026 Race €20,000
   </div>
 </div>
 
@@ -1193,6 +1344,7 @@ const ELO={Argentina:2063,France:2050,England:2020,Brazil:2010,Spain:2008,Portug
 
 const TICKER_ITEMS=[
   '✅ NOVA88 APPROVED — Asia\'s #1 Licensed Sportsbook now live on WC2026 Hub!',
+  '⚡ HELLPARTNERS LIVE — HellSpin + IviBet · CPA €30 + 30% RevShare · WC2026 Race €20,000!',
   '✅ BK8 APPROVED — You Play, We Pay up to 200! Join free today',
   '⚽ WC2026 kicks off June 11 · MetLife Stadium, New York',
   '⚽ WC2026 bermula 11 Jun · Stadium MetLife, New York',
@@ -1264,7 +1416,7 @@ const FIXTURES=[
 ];
 
 const WATCH_PARTNERS=[
-  {name:'BK8 ✅',region:'MY · SG · TH · ID · VN · PH',desc:'Asia\'s #1 football sportsbook — Official WC2026 partner, Asian Handicap specialist. Use code: addczqmb',btn:'Join BK8 FREE →',url:'https://www.bk8mlysia.com/en-my/register?refid=addczqmb',approved:true},
+  {name:'BK8 ✅',region:'MY · SG · TH · ID · VN · PH',desc:'Asia\'s #1 football sportsbook — Official WC2026 partner, Asian Handicap specialist. Use code: addczqmb',btn:'Join BK8 FREE →',url:'https://www.bktkit.com/register?affid=64728',approved:true},
   {name:'NOVA88 ✅',region:'MY · SG · TH · ASIA',desc:'20 years trusted — Asia\'s #1 licensed sportsbook. Official Aston Villa + Livescore partner. Affiliate ID: 34839',btn:'Join Nova88 →',url:'https://goto.nova88105.net/promotion/34839/en/telegram/index.html',approved:true},
   {name:'GOD55',region:'MY · SG · TH · VN · KH',desc:'Up to 45% commission — Best Asian Handicap odds in Southeast Asia',btn:'Join Now',url:'#'},
   {name:'WE88',region:'MY · SG · ASIA',desc:'Multi-award winning — 3 sportsbooks in one platform, WC2026 live streaming',btn:'Join Now',url:'#'},
