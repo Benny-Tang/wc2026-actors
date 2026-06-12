@@ -703,6 +703,61 @@ footer{
   .hp-section{padding:16px 20px;}
 }
 
+
+/* ── IVIBET BANNERS ── */
+.ivibet-section{
+  background:var(--navy2);
+  border-top:1px solid rgba(0,200,100,0.2);
+  padding:20px 40px;
+}
+.ivibet-label{
+  display:flex;align-items:center;
+  justify-content:space-between;margin-bottom:14px;
+}
+.iv-sp{font-size:10px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;}
+.iv-name{font-size:14px;font-weight:800;color:#00c864;}
+.iv-offer{font-size:12px;color:rgba(255,255,255,0.5);}
+.iv-join{font-size:12px;color:#00c864;font-weight:700;text-decoration:none;}
+.ivibet-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.iv-card{
+  position:relative;border-radius:8px;overflow:hidden;
+  cursor:pointer;border:1px solid rgba(0,200,100,0.2);
+  transition:all 0.25s;text-decoration:none;
+  display:flex;flex-direction:column;background:#020d07;
+}
+.iv-card:hover{
+  border-color:rgba(0,200,100,0.6);
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(0,200,100,0.15);
+}
+.iv-card img{
+  width:100%;height:200px;
+  object-fit:cover;object-position:center center;
+  display:block;
+}
+.iv-card-foot{
+  padding:8px 12px;
+  background:linear-gradient(135deg,rgba(0,200,100,0.1),rgba(0,200,100,0.05));
+  border-top:1px solid rgba(0,200,100,0.15);
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+}
+.iv-card-title{font-size:11px;font-weight:600;color:rgba(255,255,255,0.85);line-height:1.3;flex:1;}
+.iv-card-btn{
+  background:#00c864;color:#000;
+  font-size:10px;font-weight:800;
+  padding:5px 10px;border-radius:3px;
+  white-space:nowrap;flex-shrink:0;
+}
+.iv-aff-tag{text-align:center;font-size:10px;color:var(--gray);letter-spacing:1px;margin-top:10px;}
+@media(max-width:768px){
+  .ivibet-grid{grid-template-columns:repeat(2,1fr);}
+  .ivibet-section{padding:16px 20px;}
+}
+
 </style>
 </head>
 <body>
@@ -1234,6 +1289,65 @@ footer{
   </div>
 </div>
 
+
+<!-- IVIBET BANNER ROW -->
+<div class="ivibet-section">
+  <div class="ivibet-label">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <span class="iv-sp en-text">Official Partner</span>
+      <span class="iv-sp zh-text" style="display:none">官方合作伙伴</span>
+      <span class="iv-sp my-text" style="display:none">Rakan Rasmi</span>
+      <span class="iv-name">IVIBET</span>
+      <span class="iv-offer en-text">— WC2026 Welcome Bonus · MYR · SGD · USD · IDR</span>
+      <span class="iv-offer zh-text" style="display:none">— 世界杯欢迎奖金 · 马币·新币·美元·印尼盾</span>
+      <span class="iv-offer my-text" style="display:none">— Bonus Selamat Datang WC2026 · MYR · SGD · USD · IDR</span>
+    </div>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=103918&lpid=193&bid=1478" target="_blank" class="iv-join en-text">Join IviBet →</a>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=103918&lpid=193&bid=1478" target="_blank" class="iv-join zh-text" style="display:none">加入IviBet →</a>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=103918&lpid=193&bid=1478" target="_blank" class="iv-join my-text" style="display:none">Sertai IviBet →</a>
+  </div>
+  <div class="ivibet-grid">
+    <a class="iv-card" href="https://mio.novarao.com/redirect.aspx?pid=103918&lpid=193&bid=1478" target="_blank">
+      <img src="banners/ivibet_banner_myr_bm.jpg" alt="IviBet 1,750 MYR Bonus">
+      <div class="iv-card-foot">
+        <span class="iv-card-title en-text">1,750 MYR Bonus + 275 MYR Free Bet · Malaysia</span>
+        <span class="iv-card-title zh-text" style="display:none">1,750 马币奖金 · 马来西亚</span>
+        <span class="iv-card-title my-text" style="display:none">1,750 MYR Bonus + 275 MYR Percuma</span>
+        <span class="iv-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="iv-card" href="https://mio.novarao.com/redirect.aspx?pid=103918&lpid=193&bid=1478" target="_blank">
+      <img src="banners/ivibet_banner_usd_chinese.jpg" alt="IviBet 150 USD 奖金">
+      <div class="iv-card-foot">
+        <span class="iv-card-title en-text">150 USD Bonus + 24 USD Free Bet · CN/HK/TW</span>
+        <span class="iv-card-title zh-text" style="display:none">150 USD 奖金 + 24 USD 免费投注</span>
+        <span class="iv-card-title my-text" style="display:none">150 USD Bonus + 24 USD Percuma</span>
+        <span class="iv-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="iv-card" href="https://mio.novarao.com/redirect.aspx?pid=103918&lpid=193&bid=1478" target="_blank">
+      <img src="banners/ivibet_banner_idr_english.jpg" alt="IviBet 4,500,000 IDR Bonus">
+      <div class="iv-card-foot">
+        <span class="iv-card-title en-text">4,500,000 IDR Bonus · Indonesia</span>
+        <span class="iv-card-title zh-text" style="display:none">4,500,000 印尼盾奖金 · 印度尼西亚</span>
+        <span class="iv-card-title my-text" style="display:none">4,500,000 IDR Bonus · Indonesia</span>
+        <span class="iv-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="iv-card" href="https://mio.novarao.com/redirect.aspx?pid=103918&lpid=193&bid=1478" target="_blank">
+      <img src="banners/ivibet_banner_myr_bm.jpg" alt="IviBet SGD Bonus">
+      <div class="iv-card-foot">
+        <span class="iv-card-title en-text">525 SGD Bonus + 82 SGD Free Bet · Singapore</span>
+        <span class="iv-card-title zh-text" style="display:none">525 新币奖金 · 新加坡</span>
+        <span class="iv-card-title my-text" style="display:none">525 SGD Bonus · Singapura</span>
+        <span class="iv-card-btn">JOIN</span>
+      </div>
+    </a>
+  </div>
+  <div class="iv-aff-tag">
+    IviBet · HellPartners Affiliate ID: 675975 · WC2026 Welcome Bonus · MYR · SGD · USD · IDR
+  </div>
+</div>
 <!-- WATCH LIVE (Soft Affiliate) -->
 <section class="watch-sec" id="watch">
   <div class="sec-head">
