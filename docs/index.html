@@ -761,6 +761,54 @@ footer{
   .ivibet-section{padding:16px 20px;}
 }
 
+
+/* ── HELLSPIN BANNERS ── */
+.hellspin-section{
+  background:var(--navy2);
+  border-top:1px solid rgba(204,0,0,0.2);
+  padding:20px 40px;
+}
+.hellspin-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.hs-sp{font-size:10px;color:var(--gray);letter-spacing:2px;text-transform:uppercase;}
+.hs-name{font-size:14px;font-weight:800;color:#cc0000;}
+.hs-offer{font-size:12px;color:rgba(255,255,255,0.5);}
+.hs-join{font-size:12px;color:#cc0000;font-weight:700;text-decoration:none;}
+.hellspin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.hs-card{
+  position:relative;border-radius:8px;overflow:hidden;
+  cursor:pointer;border:1px solid rgba(204,0,0,0.2);
+  transition:all 0.25s;text-decoration:none;
+  display:flex;flex-direction:column;background:#1a0000;
+}
+.hs-card:hover{
+  border-color:rgba(204,0,0,0.6);
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px rgba(204,0,0,0.2);
+}
+.hs-card img{
+  width:100%;height:200px;
+  object-fit:cover;object-position:center center;
+  display:block;
+}
+.hs-card-foot{
+  padding:8px 12px;
+  background:linear-gradient(135deg,rgba(204,0,0,0.12),rgba(204,0,0,0.05));
+  border-top:1px solid rgba(204,0,0,0.15);
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+}
+.hs-card-title{font-size:11px;font-weight:600;color:rgba(255,255,255,0.85);line-height:1.3;flex:1;}
+.hs-card-btn{
+  background:#cc0000;color:#fff;
+  font-size:10px;font-weight:800;
+  padding:5px 10px;border-radius:3px;
+  white-space:nowrap;flex-shrink:0;
+}
+.hs-aff-tag{text-align:center;font-size:10px;color:var(--gray);letter-spacing:1px;margin-top:10px;}
+@media(max-width:768px){
+  .hellspin-grid{grid-template-columns:repeat(2,1fr);}
+  .hellspin-section{padding:16px 20px;}
+}
+
 </style>
 </head>
 <body>
@@ -1349,6 +1397,65 @@ footer{
   </div>
   <div class="iv-aff-tag">
     IviBet · HellPartners Affiliate ID: 675975 · WC2026 Welcome Bonus · MYR · SGD · USD · IDR
+  </div>
+</div>
+
+<!-- HELLSPIN BANNER ROW -->
+<div class="hellspin-section">
+  <div class="hellspin-label">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      <span class="hs-sp en-text">Official Partner</span>
+      <span class="hs-sp zh-text" style="display:none">官方合作伙伴</span>
+      <span class="hs-sp my-text" style="display:none">Rakan Rasmi</span>
+      <span class="hs-name">🔥 HELLSPIN</span>
+      <span class="hs-offer en-text">— You Play. We Pay. · MYR · IDR · USD · WC2026</span>
+      <span class="hs-offer zh-text" style="display:none">— 您玩我们付 · 马币·印尼盾·美元</span>
+      <span class="hs-offer my-text" style="display:none">— Anda Main. Kami Bayar. · MYR · IDR · USD</span>
+    </div>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank" class="hs-join en-text">Join HellSpin →</a>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank" class="hs-join zh-text" style="display:none">加入HellSpin →</a>
+    <a href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank" class="hs-join my-text" style="display:none">Sertai HellSpin →</a>
+  </div>
+  <div class="hellspin-grid">
+    <a class="hs-card" href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank">
+      <img src="banners/hellspin_banner_myr_en.jpg" alt="HellSpin 150 MYR Freebet">
+      <div class="hs-card-foot">
+        <span class="hs-card-title en-text">Freebet up to 150 MYR · Malaysia</span>
+        <span class="hs-card-title zh-text" style="display:none">免费投注高达150马币</span>
+        <span class="hs-card-title my-text" style="display:none">Freebet sehingga 150 MYR</span>
+        <span class="hs-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="hs-card" href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank">
+      <img src="banners/hellspin_banner_myr_bm.jpg" alt="HellSpin Anda Main Kami Bayar 150 MYR">
+      <div class="hs-card-foot">
+        <span class="hs-card-title en-text">Anda Main. Kami Bayar. · 150 MYR Freebet</span>
+        <span class="hs-card-title zh-text" style="display:none">您玩我们付 · 150马币</span>
+        <span class="hs-card-title my-text" style="display:none">Anda Main. Kami Bayar. · 150 MYR</span>
+        <span class="hs-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="hs-card" href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank">
+      <img src="banners/hellspin_banner_idr.jpg" alt="HellSpin 450,000 IDR Freebet Indonesia">
+      <div class="hs-card-foot">
+        <span class="hs-card-title en-text">Freebet up to 450,000 IDR · Indonesia</span>
+        <span class="hs-card-title zh-text" style="display:none">免费投注高达450,000印尼盾</span>
+        <span class="hs-card-title my-text" style="display:none">Freebet 450,000 IDR · Indonesia</span>
+        <span class="hs-card-btn">JOIN</span>
+      </div>
+    </a>
+    <a class="hs-card" href="https://mio.novarao.com/redirect.aspx?pid=104284&lpid=732&bid=1466" target="_blank">
+      <img src="banners/hellspin_banner_wc2026.jpg" alt="HellSpin WC2026 $30 Freebet">
+      <div class="hs-card-foot">
+        <span class="hs-card-title en-text">WC2026 Special · Freebet up to $30 USD</span>
+        <span class="hs-card-title zh-text" style="display:none">世界杯特别优惠 · 免费投注$30</span>
+        <span class="hs-card-title my-text" style="display:none">WC2026 Khas · Freebet $30 USD</span>
+        <span class="hs-card-btn">JOIN</span>
+      </div>
+    </a>
+  </div>
+  <div class="hs-aff-tag">
+    HellSpin · HellPartners Affiliate ID: 675975 · You Play. We Pay. · CPA €30 + 30% RevShare
   </div>
 </div>
 <!-- WATCH LIVE (Soft Affiliate) -->
