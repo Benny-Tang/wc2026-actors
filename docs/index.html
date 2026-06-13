@@ -40,11 +40,11 @@ body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;ov
 }
 .ticker-inner{
   display:flex;gap:0;
-  animation:ticker 40s linear infinite;
+  animation:ticker 90s linear infinite;
   white-space:nowrap;
 }
 .ticker-item{padding:0 40px;}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}to{transform:translateX(-50%)}}
 
 /* ── NAV ── */
 nav{
@@ -1663,9 +1663,16 @@ const WATCH_PARTNERS=[
 
 /* ── RENDER ── */
 function renderTicker(){
+  // Duplicate items for seamless infinite scroll
   const items=[...TICKER_ITEMS,...TICKER_ITEMS];
   document.getElementById('ticker-inner').innerHTML=
-    items.map(i=>`<span class="ticker-item">⚽ ${i}</span>`).join('');
+    items.map(i=>`<span class="ticker-item">${i}</span>`).join('');
+  // Set animation duration based on content length
+  const inner = document.getElementById('ticker-inner');
+  const totalW = inner.scrollWidth;
+  const speed = 120; // pixels per second
+  const duration = (totalW / 2) / speed;
+  inner.style.animationDuration = duration + 's';
 }
 
 function renderScores(){
