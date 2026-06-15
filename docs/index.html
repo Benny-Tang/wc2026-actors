@@ -808,7 +808,7 @@ footer{
 }
 .ticker2-inner{
   display:flex;gap:0;
-  animation:ticker2 9s linear infinite;
+  animation:ticker2 14s linear infinite;
   white-space:nowrap;
 }
 .ticker2-item{padding:0 40px;}
@@ -1661,7 +1661,7 @@ const TICKER2_ITEMS=[
 ];
 
 function renderTicker2(){
-  const doubled=[...TICKER2_ITEMS,...TICKER2_ITEMS,...TICKER2_ITEMS,...TICKER2_ITEMS];
+  const doubled=[...TICKER2_ITEMS,...TICKER2_ITEMS];
   document.getElementById('ticker2-inner').innerHTML=
     doubled.map(i=>`<span class="ticker2-item">${i}</span>`).join('');
 }
