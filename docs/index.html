@@ -800,6 +800,20 @@ footer{
   .hellspin-section{padding:16px 20px;}
 }
 
+
+.ticker2{
+  background:#ff6600;color:#fff;
+  padding:8px 0;overflow:hidden;
+  font-size:13px;font-weight:700;letter-spacing:0.5px;
+}
+.ticker2-inner{
+  display:flex;gap:0;
+  animation:ticker2 9s linear infinite;
+  white-space:nowrap;
+}
+.ticker2-item{padding:0 40px;}
+@keyframes ticker2{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 </style>
 </head>
 <body>
@@ -807,6 +821,11 @@ footer{
 <!-- TEXT TICKER -->
 <div class="ticker" aria-label="Live news ticker">
   <div class="ticker-inner" id="ticker-inner"></div>
+</div>
+
+<!-- TICKER 2 — NOVA88 -->
+<div class="ticker2" aria-label="Nova88 ticker">
+  <div class="ticker2-inner" id="ticker2-inner"></div>
 </div>
 
 <!-- NAV -->
@@ -1637,6 +1656,16 @@ function renderTicker(){
     doubled.map(i=>`<span class="ticker-item">${i}</span>`).join('');
 }
 
+const TICKER2_ITEMS=[
+  "🏅 NOVA88 — Asia's #1 Licensed Sportsbook · 20 Years Trusted · Road to WC2026 $268,000 Prize Pool!",
+];
+
+function renderTicker2(){
+  const doubled=[...TICKER2_ITEMS,...TICKER2_ITEMS,...TICKER2_ITEMS,...TICKER2_ITEMS];
+  document.getElementById('ticker2-inner').innerHTML=
+    doubled.map(i=>`<span class="ticker2-item">${i}</span>`).join('');
+}
+
 function renderScores(){
   const matches=[
     {s:'PRE',teams:'Mexico vs South Africa',score:'Jun 11',note:'13:00 CDT'},
@@ -1809,6 +1838,7 @@ function setLang(lang){
 
 /* ── INIT ── */
 renderTicker();
+renderTicker2();
 renderScores();
 renderPlayers();
 renderCountries();
